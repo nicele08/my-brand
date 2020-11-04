@@ -1,0 +1,35 @@
+#content{
+    resize: vertical;
+    min-height: 64px;
+    overflow-y: auto;
+}
+
+#save-button{
+    display: block;
+    background-color: #0007A6;
+    color: #F7F6E7;
+    border-radius: 5px;
+    padding: 6px 32px;
+    border: none;
+    font-size: large;
+}
+
+#author, #image{
+    border: 2px solid #2D9CDB;
+    padding: 3px;
+    border-radius: 5px;
+}
+label{
+    font-weight: bold;
+    text-transform: capitalize;
+    letter-spacing: .1em;
+}
+#btn-action{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#btn-action input:nth-child(1){
+    background-color: rgb(116, 34, 34);
+}

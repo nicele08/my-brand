@@ -120,6 +120,8 @@ img.profile{
 }
 
 
+
+
 /* phone */
 
 @media screen and (max-width: 760px){
@@ -219,7 +221,13 @@ img.profile{
 
 
 /* styling content */
-
+.content a{
+    text-decoration: none;
+}
+.content a:hover{
+    color: #153445;
+    font-weight: bold;
+}
 .my-description{
     grid-column: 1/5;
     margin: 0 32px;
