@@ -38,14 +38,17 @@
                             <label for="name">Name:</label><br>
                             <input class="input-field" type="text" name="name">
                         </p>
+                        <p class="error"></p>
                         <p>
                             <label for="email">E-mail:</label><br>
                             <input class="input-field" type="email" name="email">
                         </p>
+                        <p class="error"></p>
                         <p>
                             <label for="message">Message:</label><br>
                             <textarea name="message" id="message" cols="30" rows="5"></textarea>
                         </p>
+                        <p class="error"></p>
                     </div>
                     <input id="send-button" type="submit" value="Send">
                 </form>
@@ -89,9 +92,7 @@
             </div>
         </footer>
     </div>
-
-    <script src="../js/main.js">
-        
-    </script>
+    <script type="module" src="../js/form.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>
