@@ -404,3 +404,7 @@ img.profile{
     background-color: #CEFBFE; 
     color: #030230;
 }
+.error{
+    color: rgb(97, 15, 15);
+    font-weight: bold;
+}
