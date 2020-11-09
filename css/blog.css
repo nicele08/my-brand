@@ -103,19 +103,22 @@
 .search-wrapper{
     grid-column: 1/4;
 }
-.search{
+.search form{
     display: flex;
     align-items: center;
     border: 2px solid #A8A6A6;
     width: fit-content;
     float: right;
 }
-.search input{
+.search #search-btn{
+    border: none;
+}
+.search #query{
     width: 120px;
     height: 32px;
     border: none;
 }
-.search > input:focus{
+.search #query:focus{
     outline: none;
     font-size: large;
     width: 300px;
@@ -270,9 +273,9 @@ form #add-button{
     align-items: center;
     text-transform: uppercase;
 }
-#navbar > a{
+h1{
     font-size: x-large;
-    color: #F7F9B1;
+    color: #50501f;
     text-decoration: none;
     letter-spacing: .1em;
 }
@@ -398,6 +401,7 @@ select#select-action, #action #go{
     border: 2px solid #525252;
     border-radius: 5px;
     padding: 6px 8px;
+    cursor: pointer;
 }
 .article-table{
     display: table;    
@@ -495,7 +499,7 @@ button#current{
         margin-bottom: 12px;
     }
 
-    .search > input:focus{
+    .search #query:focus{
         width: 250px;
     }
 

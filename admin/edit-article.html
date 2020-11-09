@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Celestin Niyindaigiriye</title>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <title>Celestin's Blog</title>
+    <link rel="shortcut icon" href="../assets/icon.ico" />
 
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    
     <link type="text/css" rel="stylesheet" href="../css/main.css">
     <link type="text/css" rel="stylesheet" href="../css/blog.css">
     <link type="text/css" rel="stylesheet" href="../css/form.css">
@@ -13,20 +15,23 @@
 <body>
     <div class="container">
         <header id="navbar">
-            <a href="#">Blog administration</a>
+            <a href="./admin-blog.html"><canvas id="logo-blog" width="100" height="40" style="border: 1px solid #5C4978;"></canvas></a>
             <nav id="inner-navbar">
                 <p>Welcome, <a href="#">Celestin</a>.</p>
-                <a href="#">View site</a>
-                <a href="#">Change password</a>
-                <a href="./logout.html">Logout</a>
+                <a href="../html/blog.html">View site</a>
+                <a href="../html/change-password.html">Change password</a>
+                <a href="../html/logout.html">Logout</a>
             </nav>
         </header>
 
         <div class="content">
             <div class="search-wrapper">
                 <div class="search">
-                    <input type="text" placeholder="Search"><img src="../assets/icons/loupe.png" alt="">
-            </div>
+                    <form action="">
+                        <input id="query" type="text" placeholder="Search">
+                        <button id="search-btn" type="submit"><img src="../assets/icons/loupe.png" alt=""></button>                        
+                    </form>                    
+                </div>
             </div>
             <div class="left-side left-nav-admin">
                 <table class="nav-table">
