@@ -4,7 +4,7 @@
     overflow-y: auto;
 }
 
-#save-button{
+#save-button, #delete-button{
     display: block;
     background-color: #0007A6;
     color: #F7F6E7;
@@ -30,6 +30,6 @@ label{
     justify-content: space-between;
 }
 
-#btn-action input:nth-child(1){
+#btn-action > #delete-button{
     background-color: rgb(116, 34, 34);
 }

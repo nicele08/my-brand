@@ -25,14 +25,6 @@
         </header>
 
         <div class="content">
-            <div class="search-wrapper">
-                <div class="search">
-                    <form action="">
-                        <input id="query" type="text" placeholder="Search">
-                        <button id="search-btn" type="submit"><img src="../assets/icons/loupe.png" alt=""></button>                        
-                    </form>                    
-                </div>
-            </div>
             <div class="left-side left-nav-admin">
                 <table class="nav-table">
                     <thead>
@@ -80,27 +72,32 @@
             </div>
 
             <div class="middle-side span-two-columns">
-                <h2 id="left">Add Article</h2>
+                <h2 id="left">Edit Article</h2>
                 <form action="" enctype="multipart/form-data">
                     <div class="contact">
                         <p>
                             <label for="name">Article title:</label><br>
-                            <input class="input-field" type="text" name="title" value="How to use numpy library">
+                            <input id="article-title" class="input-field" type="text" name="title" value="How to use numpy library">
                         </p>
+                        <p class="error"></p>
                         <p><label for="visible">Article Visible:</label>&nbsp;
                             <input type="checkbox" name="visible" id="visible" checked>
                         </p>
+                        <p class="error"></p>
                         <p>
                             <label for="image">Article Image:</label><br />
                             <input type="file" name="image" id="image">
                         </p>
+                        <p class="error"></p>
                         <p>
                             <label for="author">Author:</label><br>
                             <select name="author" id="author">
-                                <option value="">Celestin</option>
-                                <option value="">Peter</option checked>
+                                <option value="">------select user------</option>
+                                <option selected value="celestin">Celestin</option>
+                                <option value="peter">Peter</option checked>
                             </select>
                         </p>
+                        <p class="error"></p>
 
                         <p>
                             <label for="content">Article Content:</label><br>
@@ -116,9 +113,10 @@
                                 explicabo suscipit quas magni molestiae reprehenderit repudiandae eum, non magnam accusamus quia.
                             </textarea>
                         </p>
+                        <p class="error"></p>
                     </div>
                     <div id="btn-action">
-                        <input id="save-button" type="submit" value="Delete">
+                        <input id="delete-button" type="submit" value="Delete">
                         <input id="save-button" type="submit" value="save">
                     </div>
                 </form>
@@ -164,6 +162,20 @@
         </footer>
     </div>
 
+    <div id="pop-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modal-message">You are going to delete <span id="title"></span>(article). These changes can't be reversed!</p>
+            <p id="modal-message-two">Article has been successful updated</p>
+        
+            <div class="modal-action">
+                <button id="modal-cancel">Close</button>
+                <button id="modal-continue">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../js/edit-article.js"></script>
     <script src="../js/main.js">
         
     </script>
