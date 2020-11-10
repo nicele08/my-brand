@@ -419,7 +419,15 @@ img.profile{
     font-weight: bolder;
 }
 
+.error{
+    margin-top: -6px;
+    color: rgb(97, 15, 15);
+}
 
+#title{
+    color: rgb(11, 0, 163);
+    font-weight: bold;
+}
 
 /* phone */
 

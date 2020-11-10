@@ -25,14 +25,6 @@
         </header>
 
         <div class="content">
-            <div class="search-wrapper">
-                <div class="search">
-                    <form action="">
-                        <input id="query" type="text" placeholder="Search">
-                        <button id="search-btn" type="submit"><img src="../assets/icons/loupe.png" alt=""></button>                        
-                    </form>                    
-                </div>
-            </div>
             <div class="left-side left-nav-admin">
                 <table class="nav-table">
                     <thead>
@@ -81,36 +73,37 @@
 
             <div class="middle-side span-two-columns">
                 <h2 id="left">Add Article</h2>
-                <form action="./add-article.html" method="POST" enctype="multipart/form-data">
+                <form action="">
                     <div class="contact">
                         <p>
                             <label for="name">Article title:</label><br>
-                            <input class="input-field" type="text" name="name">
+                            <input id="article-title" class="input-field" type="text" name="name">
                         </p>
-                        <p class="error" hidden></p>
+                        <p class="error"></p>
                         <p><label for="visible">Article Visible:</label>&nbsp;
                             <input type="checkbox" name="visible" id="visible">
                         </p>
-                        <p class="error" hidden></p>
+                        <p class="error"></p>
                         <p>
                             <label for="image">Article Image:</label><br />
                             <input type="file" name="image" id="image">
                         </p>
-                        <p class="error" hidden></p>
+                        <p class="error"></p>
                         <p>
                             <label for="author">Author:</label><br>
                             <select name="author" id="author">
-                                <option value="">Celestin</option>
-                                <option value="">Peter</option>
+                                <option selected value="">------select user------</option>
+                                <option value="celestin">Celestin</option>
+                                <option value="celestin">Peter</option>
                             </select>
                         </p>
-                        <p class="error" hidden></p>
+                        <p class="error"></p>
 
                         <p>
                             <label for="content">Article Content:</label><br>
                             <textarea name="message" id="content" cols="30" rows="10"></textarea>
                         </p>
-                        <p class="error" hidden></p>
+                        <p class="error"></p>
                     </div>
                     <input id="save-button" type="submit" value="save">
                 </form>
@@ -154,6 +147,18 @@
                 </div>
             </div>
         </footer>
+    </div>
+
+    <div id="pop-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p><span id="title"></span>(Article) has been succesful added</p>
+        
+            <div class="modal-action">
+                <button id="modal-cancel">Close</button>
+                <button id="modal-continue" hidden>Delete</button>
+            </div>
+        </div>
     </div>
 
     <script type="module" src="../js/add-article.js"></script>
