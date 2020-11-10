@@ -273,7 +273,7 @@ form #add-button{
     align-items: center;
     text-transform: uppercase;
 }
-h1{
+#admin-title{
     font-size: x-large;
     color: #50501f;
     text-decoration: none;

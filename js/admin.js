@@ -12,6 +12,7 @@ let countElement = document.getElementById("count");
 let totalElement = document.getElementById("total");
 
 let selected = select.value;
+let count = checkedBoxes(checkboxes);
 totalElement.textContent = checkboxes.length;
 countElement.textContent = updateCount(checkboxes);
 
@@ -21,17 +22,20 @@ select.onchange = function(){
 
 window.onclick = function(event){
      if(event.target.tagName == "INPUT"){
-        countElement.textContent =  updateCount(checkboxes);
+         count = updateCount(checkboxes);
+         countElement.textContent =  count;
+         if(count !== checkboxes.length){
+            checkUncheckAll.checked = false;
+         }else{
+             checkUncheckAll.checked = true;
+         }        
     }
 }
 
 checkUncheckAll.onclick = function(){
     tickAllCheckboxes(checkUncheckAll, checkboxes);
 }
-
 deleteElement.onclick = function(){
-
-    let count = checkedBoxes(checkboxes);
 
     if(count > 0 && selected === "delete"){
         number.textContent = `${count}`;
