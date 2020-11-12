@@ -1,4 +1,5 @@
 
+import addToolbar from "./functions/addToolbar.js";
 import {validateArticleAuthor, validateArticleContent, validateArticleImage, validateArticleName, validateArticleVisible } from "./functions/validateArticleForm.js";
 const saveBtn = document.getElementById("save-button");
 const err = document.getElementsByClassName("error");
@@ -24,7 +25,7 @@ saveBtn.onclick = function(){
              title.textContent = articleTitle.value;
              modal.style.display = "block";
     }
-
-
     return false;
 }
+
+addToolbar(articleContent);

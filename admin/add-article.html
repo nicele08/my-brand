@@ -11,6 +11,8 @@
     <link type="text/css" rel="stylesheet" href="../css/main.css">
     <link type="text/css" rel="stylesheet" href="../css/blog.css">
     <link type="text/css" rel="stylesheet" href="../css/form.css">
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/23.1.0/classic/ckeditor.js"></script>
 </head>
 <body>
     <div class="container">
@@ -73,40 +75,41 @@
 
             <div class="middle-side span-two-columns">
                 <h2 id="left">Add Article</h2>
-                <form action="">
-                    <div class="contact">
-                        <p>
-                            <label for="name">Article title:</label><br>
-                            <input id="article-title" class="input-field" type="text" name="name">
-                        </p>
-                        <p class="error"></p>
-                        <p><label for="visible">Article Visible:</label>&nbsp;
-                            <input type="checkbox" name="visible" id="visible">
-                        </p>
-                        <p class="error"></p>
-                        <p>
-                            <label for="image">Article Image:</label><br />
-                            <input type="file" name="image" id="image">
-                        </p>
-                        <p class="error"></p>
-                        <p>
-                            <label for="author">Author:</label><br>
-                            <select name="author" id="author">
-                                <option selected value="">------select user------</option>
-                                <option value="celestin">Celestin</option>
-                                <option value="celestin">Peter</option>
-                            </select>
-                        </p>
-                        <p class="error"></p>
+                <div class="contact editor">
+                    <form action="">
+                            <p>
+                                <label for="name">Article title:</label><br>
+                                <input id="article-title" class="input-field" type="text" name="name">
+                            </p>
+                            <p class="error"></p>
+                            <p><label for="visible">Article Visible:</label>&nbsp;
+                                <input type="checkbox" name="visible" id="visible">
+                            </p>
+                            <p class="error"></p>
+                            <p>
+                                <label for="image">Article Image:</label><br />
+                                <input type="file" name="image" id="image">
+                            </p>
+                            <p class="error"></p>
+                            <p>
+                                <label for="author">Author:</label><br>
+                                <select name="author" id="author">
+                                    <option selected value="">------select user------</option>
+                                    <option value="celestin">Celestin</option>
+                                    <option value="celestin">Peter</option>
+                                </select>
+                            </p>
+                            <p class="error"></p>
 
-                        <p>
-                            <label for="content">Article Content:</label><br>
-                            <textarea name="message" id="content" cols="30" rows="10"></textarea>
-                        </p>
-                        <p class="error"></p>
-                    </div>
-                    <input id="save-button" type="submit" value="save">
-                </form>
+                            <p>
+                                <label for="content">Article Content:</label><br>
+                                <textarea name="message" id="content" cols="30" rows="10"></textarea>
+                            </p>
+                            <p class="error"></p>
+                        
+                        <input id="save-button" type="submit" value="save">
+                    </form>
+                </div>
             </div>
         </div>
        </div>
@@ -162,8 +165,6 @@
     </div>
 
     <script type="module" src="../js/add-article.js"></script>
-    <script src="../js/main.js">
-        
-    </script>
+    <script src="../js/main.js"></script>
 </body>
 </html>
