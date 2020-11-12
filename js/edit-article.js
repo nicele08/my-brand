@@ -1,4 +1,5 @@
 
+import addToolbar from "./functions/addToolbar.js";
 import {validateArticleAuthor, validateArticleContent, validateArticleImage, validateArticleName, validateArticleVisible } from "./functions/validateArticleForm.js";
 const saveBtn = document.getElementById("save-button");
 const deleteBtn = document.getElementById("delete-button");
@@ -32,6 +33,7 @@ saveBtn.onclick = function(){
              firstMessage.style.display = "none";
              continueModal.style.display = "none";
              secondMessage.textContent = "Article has been successful updated";
+             closeModal.textContent = "Close";
              modal.style.display = "block";
     }
 
@@ -47,3 +49,5 @@ deleteBtn.onclick = function(){
     modal.style.display = "block";
     return false;
 }
+
+addToolbar(articleContent);

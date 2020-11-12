@@ -6,11 +6,15 @@
     <title>Celestin's Blog</title>
     <link rel="shortcut icon" href="../assets/icon.ico" />
 
+    <script src="https://cdn.ckeditor.com/ckeditor5/23.1.0/classic/ckeditor.js"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     
     <link type="text/css" rel="stylesheet" href="../css/main.css">
     <link type="text/css" rel="stylesheet" href="../css/blog.css">
     <link type="text/css" rel="stylesheet" href="../css/form.css">
+
+    
 </head>
 <body>
     <div class="container">
@@ -73,53 +77,53 @@
 
             <div class="middle-side span-two-columns">
                 <h2 id="left">Edit Article</h2>
-                <form action="" enctype="multipart/form-data">
-                    <div class="contact">
-                        <p>
-                            <label for="name">Article title:</label><br>
-                            <input id="article-title" class="input-field" type="text" name="title" value="How to use numpy library">
-                        </p>
-                        <p class="error"></p>
-                        <p><label for="visible">Article Visible:</label>&nbsp;
-                            <input type="checkbox" name="visible" id="visible" checked>
-                        </p>
-                        <p class="error"></p>
-                        <p>
-                            <label for="image">Article Image:</label><br />
-                            <input type="file" name="image" id="image">
-                        </p>
-                        <p class="error"></p>
-                        <p>
-                            <label for="author">Author:</label><br>
-                            <select name="author" id="author">
-                                <option value="">------select user------</option>
-                                <option selected value="celestin">Celestin</option>
-                                <option value="peter">Peter</option checked>
-                            </select>
-                        </p>
-                        <p class="error"></p>
+                <div class="contact editor">
+                    <form action="" enctype="multipart/form-data">
+                            <p>
+                                <label for="name">Article title:</label><br>
+                                <input id="article-title" class="input-field" type="text" name="title" value="How to use numpy library">
+                            </p>
+                            <p class="error"></p>
+                            <p><label for="visible">Article Visible:</label>&nbsp;
+                                <input type="checkbox" name="visible" id="visible" checked>
+                            </p>
+                            <p class="error"></p>
+                            <p>
+                                <label for="image">Article Image:</label><br />
+                                <input type="file" name="image" id="image">
+                            </p>
+                            <p class="error"></p>
+                            <p>
+                                <label for="author">Author:</label><br>
+                                <select name="author" id="author">
+                                    <option value="">------select user------</option>
+                                    <option selected value="celestin">Celestin</option>
+                                    <option value="peter">Peter</option checked>
+                                </select>
+                            </p>
+                            <p class="error"></p>
 
-                        <p>
-                            <label for="content">Article Content:</label><br>
-                            <textarea name="message" id="content" cols="30" rows="10">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                                Odit maxime id eius obcaecati enim iste minus, dignissimos et,
-                                explicabo suscipit quas magni molestiae reprehenderit repudiandae eum, non magnam accusamus quia.
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                                Odit maxime id eius obcaecati enim iste minus, dignissimos et,
-                                explicabo suscipit quas magni molestiae reprehenderit repudiandae eum, non magnam accusamus quia.
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                                Odit maxime id eius obcaecati enim iste minus, dignissimos et,
-                                explicabo suscipit quas magni molestiae reprehenderit repudiandae eum, non magnam accusamus quia.
-                            </textarea>
-                        </p>
-                        <p class="error"></p>
-                    </div>
-                    <div id="btn-action">
-                        <input id="delete-button" type="submit" value="Delete">
-                        <input id="save-button" type="submit" value="save">
-                    </div>
-                </form>
+                            <p>
+                                <label for="content">Article Content:</label><br>
+                                <textarea name="message" id="content" cols="30" rows="10">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                    Odit maxime id eius obcaecati enim iste minus, dignissimos et,
+                                    explicabo suscipit quas magni molestiae reprehenderit repudiandae eum, non magnam accusamus quia.
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                    Odit maxime id eius obcaecati enim iste minus, dignissimos et,
+                                    explicabo suscipit quas magni molestiae reprehenderit repudiandae eum, non magnam accusamus quia.
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                    Odit maxime id eius obcaecati enim iste minus, dignissimos et,
+                                    explicabo suscipit quas magni molestiae reprehenderit repudiandae eum, non magnam accusamus quia.
+                                </textarea>
+                            </p>
+                            <p class="error"></p>                        
+                        <div id="btn-action">
+                            <input id="delete-button" type="submit" value="Delete">
+                            <input id="save-button" type="submit" value="save">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
        </div>
