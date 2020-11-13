@@ -27,9 +27,6 @@ function openNav(){
 
 function changeMenu(id){
     menuIconOpen ? closeNav() : openNav();
-<<<<<<< HEAD
-}
-=======
 }
 
 let canvas = document.getElementById("logo-blog");
@@ -59,4 +56,3 @@ ctx.strokeStyle = gradient;
 ctx.lineWidth = 5;
 ctx.stroke();
 
->>>>>>> ft-create-login-route
