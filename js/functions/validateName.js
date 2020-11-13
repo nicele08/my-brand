@@ -17,5 +17,3 @@ export default function validateName(element, err){
         return true;
     }
 }
-
-

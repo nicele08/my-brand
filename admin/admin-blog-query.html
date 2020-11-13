@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queries | Celestin's Blog</title>
+    <link rel="shortcut icon" href="../assets/icon.ico" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    
+    <link type="text/css" rel="stylesheet" href="../css/main.css">
+    <link type="text/css" rel="stylesheet" href="../css/blog.css">
+</head>
+<body>
+    <div class="container">
+        <header id="navbar">
+            <a href="./admin-blog.html"><canvas id="logo-blog" width="100" height="40" style="border: 1px solid #5C4978;"></canvas></a>
+            <nav id="inner-navbar">
+                <p>Welcome, <a href="#">Celestin</a>.</p>
+                <a href="../html/blog.html">View site</a>
+                <a href="../html/change-password.html">Change password</a>
+                <a href="../html/logout.html">Logout</a>
+            </nav>
+        </header>
+
+        <div class="content container-blog-admin">
+            <div class="search-wrapper">
+                <div class="search">
+                    <form action="">
+                        <input id="query" type="text" placeholder="Search">
+                        <button id="search-btn" type="submit"><img src="../assets/icons/loupe.png" alt=""></button>                        
+                    </form>                    
+                </div>
+            </div>
+            <div class="left-side left-nav-admin">
+                <table class="nav-table">
+                    <thead>
+                        <tr>
+                            <th colspan="3">Authenticated users</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="#">Users</a></td>
+                            <td class="td-value"><a href="#"><img src="../assets/icons/add.png" alt="">&nbsp;Add</a></td>
+                            <td class="td-value"><a href="#"><img src="../assets/icons/pencil.png" alt="">&nbsp;Change</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Profiles</a></td>
+                            <td class="td-value"><a href="#"><img src="../assets/icons/add.png" alt="">&nbsp;Add</a></td>
+                            <td class="td-value"><a href="#"><img src="../assets/icons/pencil.png" alt="">&nbsp;Change</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="nav-table">
+                    <thead>
+                        <tr>
+                            <th colspan="3">My blog</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="./admin-blog-article.html">Articles</a></td>
+                            <td class="td-value"><a href="./add-article.html"><img src="../assets/icons/add.png" alt="">&nbsp;Add</a></td>
+                            <td class="td-value"><a href="./admin-blog-article.html"><img src="../assets/icons/pencil.png" alt="">&nbsp;Change</a></td>
+                        </tr>
+                        <tr id="active-row">
+                            <td><a href="./admin-blog-query.html">Queries</a></td>
+                            <td class="td-value"><a href="./add-query.html"><img src="../assets/icons/add.png" alt="">&nbsp;Add</a></td>
+                            <td class="td-value"><a href="./admin-blog-query.html"><img src="../assets/icons/pencil.png" alt="">&nbsp;Change</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Comments</a></td>
+                            <td class="td-value"><a href="#"><img src="../assets/icons/add.png" alt="">&nbsp;Add</a></td>
+                            <td class="td-value"><a href="#"><img src="../assets/icons/pencil.png" alt="">&nbsp;Change</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Views</a></td>
+                            <td class="td-value"><a href="#"><img src="../assets/icons/add.png" alt="">&nbsp;Add</a></td>
+                            <td class="td-value"><a href="#"><img src="../assets/icons/pencil.png" alt="">&nbsp;Change</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="middle-side">
+
+                <h2>Select query to change</h2>
+                <div id="action">
+                    <form>
+                        <label for="action">Action:</label>
+                        <select name="action" id="select-action">
+                            <option disabled selected value>--------select an option--------</option>
+                            <option id="delete" value="delete">Delete selected queries</option>
+                        </select>
+                        <input type="submit" value="Go" id="go" />
+                    </form>
+                    <p><span id="count">0</span> of <span id="total">0</span> selected</p>
+                </div>
+
+                <div class="table-view">
+                    <table class="article-table">
+                    <thead>
+                            <tr>
+                                <th><input id="check-all" type="checkbox"></th>
+                                <th>Names</th>
+                                <th>E-mail</th>
+                                <th>Message</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead> 
+                        <tbody>
+                            <tr>
+                                <td><input class="chk-box" type="checkbox"></td>
+                                <td><a href="./edit-query.html">Peter kagabo</a></td>
+                                <td>kagabo@gmail.com</td>
+                                <td>How to log in on this blog, please</td>
+                                <td>21/10/2020</td>
+                            </tr>
+                            <tr>
+                                <td><input class="chk-box" type="checkbox"></td>
+                                <td><a href="./edit-query.html">Peter kagabo</a></td>
+                                <td>kagabo@gmail.com</td>
+                                <td>How to log in on this blog, please</td>
+                                <td>21/10/2020</td>
+                            </tr>
+                            <tr>
+                                <td><input class="chk-box" type="checkbox"></td>
+                                <td><a href="./edit-query.html">Peter kagabo</a></td>
+                                <td>kagabo@gmail.com</td>
+                                <td>How to log in on this blog, please</td>
+                                <td>21/10/2020</td>
+                            </tr>
+                            <tr>
+                                <td><input class="chk-box" type="checkbox"></td>
+                                <td><a href="./edit-query.html">Peter kagabo</a></td>
+                                <td>kagabo@gmail.com</td>
+                                <td>How to log in on this blog, please</td>
+                                <td>21/10/2020</td>
+                            </tr>
+                            <tr>
+                                <td><input class="chk-box" type="checkbox"></td>
+                                <td><a href="./edit-query.html">Peter kagabo</a></td>
+                                <td>kagabo@gmail.com</td>
+                                <td>How to log in on this blog, please</td>
+                                <td>21/10/2020</td>
+                            </tr>
+                            <tr>
+                                <td><input class="chk-box" type="checkbox"></td>
+                                <td><a href="./edit-query.html">Peter kagabo</a></td>
+                                <td>kagabo@gmail.com</td>
+                                <td>How to log in on this blog, please</td>
+                                <td>21/10/2020</td>
+                            </tr>
+                            <tr>
+                                <td><input class="chk-box" type="checkbox"></td>
+                                <td><a href="./edit-query.html">Peter kagabo</a></td>
+                                <td>kagabo@gmail.com</td>
+                                <td>How to log in on this blog, please</td>
+                                <td>21/10/2020</td>
+                            </tr>
+                            <tr>
+                                <td><input class="chk-box" type="checkbox"></td>
+                                <td><a href="./edit-query.html">Peter kagabo</a></td>
+                                <td>kagabo@gmail.com</td>
+                                <td>How to log in on this blog, please</td>
+                                <td>21/10/2020</td>
+                            </tr>
+                            <tr>
+                                <td><input class="chk-box" type="checkbox"></td>
+                                <td><a href="./edit-query.html">Peter kagabo</a></td>
+                                <td>kagabo@gmail.com</td>
+                                <td>How to log in on this blog, please</td>
+                                <td>21/10/2020</td>
+                            </tr>
+                            <tr>
+                                <td><input class="chk-box" type="checkbox"></td>
+                                <td><a href="./edit-query.html">Peter kagabo</a></td>
+                                <td>kagabo@gmail.com</td>
+                                <td>How to log in on this blog, please</td>
+                                <td>21/10/2020</td>
+                            </tr>
+                            <tr>
+                                <td><input class="chk-box" type="checkbox"></td>
+                                <td><a href="./edit-query.html">Peter kagabo</a></td>
+                                <td>kagabo@gmail.com</td>
+                                <td>How to log in on this blog, please</td>
+                                <td>21/10/2020</td>
+                            </tr>
+                            <tr>
+                                <td><input class="chk-box" type="checkbox"></td>
+                                <td><a href="./edit-query.html">Peter kagabo</a></td>
+                                <td>kagabo@gmail.com</td>
+                                <td>How to log in on this blog, please</td>
+                                <td>21/10/2020</td>
+                            </tr>
+                            <tr>
+                                <td><input class="chk-box" type="checkbox"></td>
+                                <td><a href="./edit-query.html">Peter kagabo</a></td>
+                                <td>kagabo@gmail.com</td>
+                                <td>How to log in on this blog, please</td>
+                                <td>21/10/2020</td>
+                            </tr>
+                            <tr>
+                                <td><input class="chk-box" type="checkbox"></td>
+                                <td><a href="./edit-query.html">Peter kagabo</a></td>
+                                <td>kagabo@gmail.com</td>
+                                <td>How to log in on this blog, please</td>
+                                <td>21/10/2020</td>
+                            </tr>
+                            <tr>
+                                <td><input class="chk-box" type="checkbox"></td>
+                                <td><a href="./edit-query.html">Peter kagabo</a></td>
+                                <td>kagabo@gmail.com</td>
+                                <td>How to log in on this blog, please</td>
+                                <td>21/10/2020</td>
+                            </tr>
+                            <tr>
+                                <td><input class="chk-box" type="checkbox"></td>
+                                <td><a href="./edit-query.html">Peter kagabo</a></td>
+                                <td>kagabo@gmail.com</td>
+                                <td>How to log in on this blog, please</td>
+                                <td>21/10/2020</td>
+                            </tr>
+                            <tr>
+                                <td><input class="chk-box" type="checkbox"></td>
+                                <td><a href="./edit-query.html">Peter kagabo</a></td>
+                                <td>kagabo@gmail.com</td>
+                                <td>How to log in on this blog, please</td>
+                                <td>21/10/2020</td>
+                            </tr>
+                            <tr>
+                                <td><input class="chk-box" type="checkbox"></td>
+                                <td><a href="./edit-query.html">Peter kagabo</a></td>
+                                <td>kagabo@gmail.com</td>
+                                <td>How to log in on this blog, please</td>
+                                <td>21/10/2020</td>
+                            </tr>
+                            <tr>
+                                <td><input class="chk-box" type="checkbox"></td>
+                                <td><a href="./edit-query.html">Peter kagabo</a></td>
+                                <td>kagabo@gmail.com</td>
+                                <td>How to log in on this blog, please</td>
+                                <td>21/10/2020</td>
+                            </tr>
+                            <tr>
+                                <td><input class="chk-box" type="checkbox"></td>
+                                <td><a href="./edit-query.html">Peter kagabo</a></td>
+                                <td>kagabo@gmail.com</td>
+                                <td>How to log in on this blog, please</td>
+                                <td>21/10/2020</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pages">
+                    <button id="current" disabled>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <p>80 Queries</p>
+                </div>
+
+            </div>
+                
+            <div class="right-side right-admin">
+                <div class="recent-actions">
+                    <h3>Filter</h3>
+                    <hr/>
+                    <div class="actions">
+                        <h4>Filter by date</h4>
+                        <p><a href="#">Any date</a></p>
+                        <p><a href="#">Today</a></p>
+                        <p><a href="#">Past 7 days</a></p>
+                        <p><a href="#">This month</a></p>
+                        <p><a href="#">This year</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+       </div>
+
+        <footer>
+            <div class="footer-wrapper">
+                <div class="footer-inner-wrapper about-footer">
+                    <h5>About</h5>
+                    <p>Web developer</p>
+                    <p>&copy; 2020 by Celestin Niyindagiriye</p>
+                </div>
+                <div class="footer-inner-wrapper blog-footer">
+                    <h5>Blog</h5>
+                    <p>Stay updated with our latest bolg posts</p>
+                    <form action="">
+                        <input type="email">
+                        <input type="submit" value="Updates">
+                    </form>
+                </div>
+                <div class="footer-inner-wrapper social-media">
+                    <h6>Get in touch</h6> 
+                    <div class="get-in-touch"><a href=""><img src="../assets/icons/linkedin.png" alt="linkedin"></a>
+                    <a href="#"><img src="../assets/icons/github-big-logo.png" alt="github"></a>
+                    <a href=""><img src="../assets/icons/facebook.png" alt="facebook"></a>
+                    <a href=""><img src="../assets/icons/youtube.png" alt="youtube"></a>
+                    <a href=""><img src="../assets/icons/skype.png" alt="skype"></a>
+                     </div>
+                       
+                </div>
+                <div class="footer-inner-wrapper contact-footer">
+                    <h5>Contact</h5>
+                    <p><img src="../assets/icons/email.png" alt="E-mail">
+                        cniyindagiriye@gmail.com</p>
+                    <p><img class="iconify" src="../assets/icons/phone-call.png" alt="Call us">
+                        +250 780 728 136</p>
+                    <p><img src="../assets/icons/location-pin.png" alt="Location">
+                        Gasaka, Nyamagabe, Rwanda</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="pop-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modal-message">You are going to delete <span id="message-number">5</span> queries. These changes can't be reversed!</p>
+            <p>Are you sure to delete?</p>
+        
+            <div class="modal-action">
+                <button id="modal-cancel">Cancel</button>
+                <button id="modal-continue">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script type="module" src="../js/admin.js"></script>
+    <script src="../js/logo.js"></script>
+</body>
+</html>
