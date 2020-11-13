@@ -403,4 +403,11 @@ img.profile{
 #navigation .current{
     background-color: #CEFBFE; 
     color: #030230;
+<<<<<<< HEAD
+=======
+}
+.error{
+    color: rgb(97, 15, 15);
+    font-weight: bold;
+>>>>>>> ft-create-login-route
 }
