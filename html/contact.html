@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celestin Niyindaigiriye</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet" href="../css/main.css">
+    <link type="text/css" rel="stylesheet" href="../css/contact.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav id="navigation">
+                <a id="banner" href="#"><img class="profile" src="../assets/profile.jpeg" alt="Profile"><span>Celestin</span></a>
+                    
+                <a id="home" href="./index.html">Home</a>
+                <a id="blog" href="./blog.html">Blog</a>
+                <a id="about" href="./about.html">About</a>
+                <a id="contact" class="current" href="#">Contact</a>
+                <a id="login" href="./login.html">Login</a>
+                <div class="menu-icon" onclick="changeMenu(this)">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+            </nav>
+        </header>
+
+        <div class="content">
+            <div class="contact-wrapper">
+                <h3>Write me a message</h3>
+                <p id="chat"><img class="iconify" src="../assets/icons/chat.png" alt=""></p>
+                <form action="">
+                    <div class="contact">
+                        <p>
+                            <label for="name">Name:</label><br>
+                            <input class="input-field" type="text" name="name">
+                        </p>
+                        <p class="error"></p>
+                        <p>
+                            <label for="email">E-mail:</label><br>
+                            <input class="input-field" type="email" name="email">
+                        </p>
+                        <p class="error"></p>
+                        <p>
+                            <label for="message">Message:</label><br>
+                            <textarea name="message" id="message" cols="30" rows="5"></textarea>
+                        </p>
+                        <p class="error"></p>
+                    </div>
+                    <input id="send-button" type="submit" value="Send">
+                </form>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-wrapper">
+                <div class="footer-inner-wrapper about-footer">
+                    <h5>About</h5>
+                    <p>Web developer</p>
+                    <p>&copy; 2020 by Celestin Niyindagiriye</p>
+                </div>
+                <div class="footer-inner-wrapper blog-footer">
+                    <h5>Blog</h5>
+                    <p>Stay updated with our latest bolg posts</p>
+                    <form action="">
+                        <input type="email">
+                        <input type="submit" value="Updates">
+                    </form>
+                </div>
+                <div class="footer-inner-wrapper social-media">
+                    <h6>Get in touch</h6> 
+                    <div class="get-in-touch"><a href=""><img src="../assets/icons/linkedin.png" alt="linkedin"></a>
+                    <a href="#"><img src="../assets/icons/github-big-logo.png" alt="github"></a>
+                    <a href=""><img src="../assets/icons/facebook.png" alt="facebook"></a>
+                    <a href=""><img src="../assets/icons/youtube.png" alt="youtube"></a>
+                    <a href=""><img src="../assets/icons/skype.png" alt="skype"></a>
+                     </div>
+                       
+                </div>
+                <div class="footer-inner-wrapper contact-footer">
+                    <h5>Contact</h5>
+                    <p><img src="../assets/icons/email.png" alt="E-mail" />
+                        cniyindagiriye@gmail.com</p>
+                    <p><img class="iconify" src="../assets/icons/phone-call.png" alt="Call us" />
+                        +250 780 728 136</p>
+                    <p><img src="../assets/icons/location-pin.png" alt="Location" />
+                        Gasaka, Nyamagabe, Rwanda</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script type="module" src="../js/form.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
