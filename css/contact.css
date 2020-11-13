@@ -1,7 +1,7 @@
 .content{
     display: grid;
     grid-template-columns: 1fr;
-    padding: 10% 0px;
+    padding: 5% 0px;
     margin: 0px 32px;
 }
 
@@ -10,6 +10,17 @@
     grid-template-columns: 1fr 1fr;
     grid-gap: 64px;
     align-items: center;
+}
+.contact{
+    display: block;
+    width: 60%;
+    margin: auto;
+    padding: 3px;
+}
+.contact #message-head{
+    text-align: center;
+    padding-bottom: 12px;
+    margin-top: 0;
 }
 #motivation{
     background: #6D627C;
@@ -115,6 +126,10 @@ textarea{
     .contact-wrapper{
         grid-template-columns: 1fr;
         grid-gap: 32px;
+    }
+    .contact{
+        width: 90%;
+        height: 100%;
     }
     
 }
