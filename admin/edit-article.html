@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celestin's Blog</title>
+    <link rel="shortcut icon" href="../assets/icon.ico" />
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/23.1.0/classic/ckeditor.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    
+    <link type="text/css" rel="stylesheet" href="../css/main.css">
+    <link type="text/css" rel="stylesheet" href="../css/blog.css">
+    <link type="text/css" rel="stylesheet" href="../css/form.css">
+
+    
+</head>
+<body>
+    <div class="container">
+        <header id="navbar">
+            <a href="./admin-blog.html"><canvas id="logo-blog" width="100" height="40" style="border: 1px solid #5C4978;"></canvas></a>
+            <nav id="inner-navbar">
+                <p>Welcome, <a href="#">Celestin</a>.</p>
+                <a href="../html/blog.html">View site</a>
+                <a href="../html/change-password.html">Change password</a>
+                <a href="../html/logout.html">Logout</a>
+            </nav>
+        </header>
+
+        <div class="content">
+            <div class="left-side left-nav-admin">
+                <table class="nav-table">
+                    <thead>
+                        <tr>
+                            <th colspan="3">Authenticated users</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="#">Users</a></td>
+                            <td class="td-value"><a href="#"><img src="../assets/icons/add.png" alt="">&nbsp;Add</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Profiles</a></td>
+                            <td class="td-value"><a href="#"><img src="../assets/icons/add.png" alt="">&nbsp;Add</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="nav-table">
+                    <thead>
+                        <tr>
+                            <th colspan="3">My blog</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="active-row">
+                            <td><a href="./admin-blog-article.html">Articles</a></td>
+                            <td class="td-value"><a href="./add-article.html"><img src="../assets/icons/add.png" alt="">&nbsp;Add</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Messages</a></td>
+                            <td class="td-value"><a href="#"><img src="../assets/icons/add.png" alt="">&nbsp;Add</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Comments</a></td>
+                            <td class="td-value"><a href="#"><img src="../assets/icons/add.png" alt="">&nbsp;Add</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Views</a></td>
+                            <td class="td-value"><a href="#"><img src="../assets/icons/add.png" alt="">&nbsp;Add</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="middle-side span-two-columns">
+                <h2 id="left">Edit Article</h2>
+                <div class="contact editor">
+                    <form action="" enctype="multipart/form-data">
+                            <p>
+                                <label for="name">Article title:</label><br>
+                                <input id="article-title" class="input-field" type="text" name="title" value="How to use numpy library">
+                            </p>
+                            <p class="error"></p>
+                            <p><label for="visible">Article Visible:</label>&nbsp;
+                                <input type="checkbox" name="visible" id="visible" checked>
+                            </p>
+                            <p class="error"></p>
+                            <p>
+                                <label for="image">Article Image:</label><br />
+                                <input type="file" name="image" id="image">
+                            </p>
+                            <p class="error"></p>
+                            <p>
+                                <label for="author">Author:</label><br>
+                                <select name="author" id="author">
+                                    <option value="">------select user------</option>
+                                    <option selected value="celestin">Celestin</option>
+                                    <option value="peter">Peter</option checked>
+                                </select>
+                            </p>
+                            <p class="error"></p>
+
+                            <p>
+                                <label for="content">Article Content:</label><br>
+                                <textarea name="message" id="content" cols="30" rows="10">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                    Odit maxime id eius obcaecati enim iste minus, dignissimos et,
+                                    explicabo suscipit quas magni molestiae reprehenderit repudiandae eum, non magnam accusamus quia.
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                    Odit maxime id eius obcaecati enim iste minus, dignissimos et,
+                                    explicabo suscipit quas magni molestiae reprehenderit repudiandae eum, non magnam accusamus quia.
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                    Odit maxime id eius obcaecati enim iste minus, dignissimos et,
+                                    explicabo suscipit quas magni molestiae reprehenderit repudiandae eum, non magnam accusamus quia.
+                                </textarea>
+                            </p>
+                            <p class="error"></p>                        
+                        <div id="btn-action">
+                            <input id="delete-button" type="submit" value="Delete">
+                            <input id="save-button" type="submit" value="save">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+       </div>
+
+        <footer>
+            <div class="footer-wrapper">
+                <div class="footer-inner-wrapper about-footer">
+                    <h5>About</h5>
+                    <p>Web developer</p>
+                    <p>&copy; 2020 by Celestin Niyindagiriye</p>
+                </div>
+                <div class="footer-inner-wrapper blog-footer">
+                    <h5>Blog</h5>
+                    <p>Stay updated with our latest bolg posts</p>
+                    <form action="">
+                        <input type="email">
+                        <input type="submit" value="Updates">
+                    </form>
+                </div>
+                <div class="footer-inner-wrapper social-media">
+                    <h6>Get in touch</h6> 
+                    <div class="get-in-touch"><a href=""><img src="../assets/icons/linkedin.png" alt="linkedin"></a>
+                    <a href="#"><img src="../assets/icons/github-big-logo.png" alt="github"></a>
+                    <a href=""><img src="../assets/icons/facebook.png" alt="facebook"></a>
+                    <a href=""><img src="../assets/icons/youtube.png" alt="youtube"></a>
+                    <a href=""><img src="../assets/icons/skype.png" alt="skype"></a>
+                     </div>
+                       
+                </div>
+                <div class="footer-inner-wrapper contact-footer">
+                    <h5>Contact</h5>
+                    <p><img src="../assets/icons/email.png" alt="E-mail">
+                        cniyindagiriye@gmail.com</p>
+                    <p><img class="iconify" src="../assets/icons/phone-call.png" alt="Call us">
+                        +250 780 728 136</p>
+                    <p><img src="../assets/icons/location-pin.png" alt="Location">
+                        Gasaka, Nyamagabe, Rwanda</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="pop-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modal-message">You are going to delete <span id="title"></span>(article). These changes can't be reversed!</p>
+            <p id="modal-message-two">Article has been successful updated</p>
+        
+            <div class="modal-action">
+                <button id="modal-cancel">Close</button>
+                <button id="modal-continue">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../js/edit-article.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/logo.js"></script>
+</body>
+</html>

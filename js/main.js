@@ -29,6 +29,7 @@ function changeMenu(id){
     menuIconOpen ? closeNav() : openNav();
 }
 
+<<<<<<< HEAD
 let canvas = document.getElementById("logo-blog");
 let ctx = canvas.getContext("2d");
 
@@ -55,5 +56,27 @@ gradient.addColorStop("1.0", "red");
 ctx.strokeStyle = gradient;
 ctx.lineWidth = 5;
 ctx.stroke();
+=======
+
+
+let modal = document.getElementById("pop-modal");
+let spanClose = document.getElementsByClassName("close")[0];
+let cancelBtn = document.getElementById("modal-cancel");
+spanClose.onclick = function(){
+    modal.style.display = "none";
+}
+
+cancelBtn.onclick = function(){
+    modal.style.display = "none";
+}
+
+window.onclick = function(event){
+    if(event.target == modal){
+        modal.style.display = "none";
+    }
+}
+
+
+>>>>>>> ft-create-blog-route
 
 
