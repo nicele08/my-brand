@@ -29,8 +29,6 @@ function changeMenu(id){
     menuIconOpen ? closeNav() : openNav();
 }
 
-
-
 let modal = document.getElementById("pop-modal");
 let spanClose = document.getElementsByClassName("close")[0];
 let cancelBtn = document.getElementById("modal-cancel");

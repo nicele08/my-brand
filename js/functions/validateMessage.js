@@ -14,4 +14,4 @@ export default function validateMessage(element, err){
         removeShadow(element);
         return true;
     }
-}
+} 
