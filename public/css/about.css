@@ -1,0 +1,64 @@
+.content{
+    display: block;
+    margin: 0 32px;
+}
+
+.content h1{
+    text-align: center;
+}
+
+.about-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 16px;
+}
+
+#my-image{
+    border: 2px solid #CFCFCF;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.skills-container{
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 20px;
+}
+.skills-javascript{
+    width: 90%;
+    background-color: #3633CB;
+    height: 32px;
+    border-radius: 20px;
+}
+
+.skills-python{
+    width: 85%;
+    background-color: #3633CB;
+    height: 32px;
+    border-radius: 20px;
+}
+
+.skills-java{
+    width: 80%;
+    background-color: #3633CB;
+    height: 32px;
+    border-radius: 20px;
+}
+
+.skills-statistics{
+    width: 83%;
+    background-color: #3633CB;
+    height: 32px;
+    border-radius: 20px;
+}
+
+#calender, #skype{
+    display: flex;
+    align-items: center;
+}
+#about{
+    background-color: #CEFBFE;
+}
+#home{
+    background-color: #F7F6E7;
+}
