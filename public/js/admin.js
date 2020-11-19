@@ -40,7 +40,7 @@ auth.onAuthStateChanged(user => {
            }))
         })
     }else{
-        window.location.href = "../pages/blog.html";
+        window.location.href = "../pages/login.html";
     }
 })
 
