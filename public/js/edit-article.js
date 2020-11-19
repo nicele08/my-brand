@@ -42,7 +42,7 @@ auth.onAuthStateChanged(user => {
             articleTopic.value = article.topic;
         }).then(()=>wait.style.display="none")
     }else{
-        window.location.href = "../pages/blog.html";
+        window.location.href = "../pages/login.html";
     }
 });
 
