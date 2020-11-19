@@ -11,7 +11,7 @@ const formLogin = document.querySelector("#form-login");
 
 auth.onAuthStateChanged(user => {
     if(user){        
-        window.location.replace("./blog.html");
+        // window.location.replace("./blog.html");
     }else{      
     }
 });
