@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celestin Niyindaigiriye</title>
+    <link rel="shortcut icon" href="../assets/icon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet" href="../css/main.css">
+    <link type="text/css" rel="stylesheet" href="../css/contact.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav id="navigation">
+                <a id="banner" href="../index.html"><img class="profile" src="../assets/profile.jpeg" alt="Profile"><span>Celestin</span></a>
+                    
+                <a id="home" href="./index.html">Home</a>
+                <a id="blog" href="./blog.html">Blog</a>
+                <a id="about" href="./about.html">About</a>
+                <a id="contact" class="current" href="#">Contact</a>
+                <a id="login" href="./login.html">Login</a>
+                <div class="menu-icon" onclick="changeMenu(this)">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+            </nav>
+        </header>
+
+        <div class="content">
+            <div class="contact">
+                <h3 id="message-head">Write me a message</h3>
+                <div class="login">
+                    <p id="chat"><img class="iconify" src="../assets/icons/chat.png" alt=""></p>
+                    <form action="" method="POST" id="form-contact">
+                        
+                            <p>
+                                <label for="name">Name:</label><br>
+                                <input id="form-name" class="input-field" type="text" name="name">
+                            </p>
+                            <p class="error"></p>
+                            <p>
+                                <label for="email">E-mail:</label><br>
+                                <input id="form-email" class="input-field" type="email" name="email">
+                            </p>
+                            <p class="error"></p>
+                            <p>
+                                <label for="message">Message:</label><br>
+                                <textarea name="message" id="message" cols="30" rows="5"></textarea>
+                            </p>
+                            <p class="error"></p>
+                        
+                        <input id="send-button" type="submit" value="Send">
+                    </form>
+                   </div> 
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-wrapper">
+                <div class="footer-inner-wrapper about-footer">
+                    <h5>About</h5>
+                    <p>Web developer</p>
+                    <p>&copy; 2020 by Celestin Niyindagiriye</p>
+                </div>
+                <div class="footer-inner-wrapper blog-footer">
+                    <h5>Blog</h5>
+                    <p>Stay updated with our latest bolg posts</p>
+                    <form action="">
+                        <input type="email">
+                        <input type="submit" value="Updates">
+                    </form>
+                </div>
+                <div class="footer-inner-wrapper social-media">
+                    <h6>Get in touch</h6> 
+                    <div class="get-in-touch">
+                        <a title="LinkeIn" href="https://www.linkedin.com/in/celestin-niyindagiriye-1380b1175/"><img src="../assets/icons/linkedin.png" alt="linkedin"></a>
+                        <a title="GitHub" href="https://github.com/cniyindagiriye/"><img src="../assets/icons/github-big-logo.png" alt="github"></a>
+                        <a title="Facebook" href="https://web.facebook.com/celestin.niyindagiriye/"><img src="../assets/icons/facebook.png" alt="facebook"></a>
+                        <a title="YouTube" href="https://www.youtube.com/channel/UC5mgJF3JEwB_0sCK7eMKj_Q"><img src="../assets/icons/youtube.png" alt="youtube"></a>
+                        <a title="Skype" href="https://join.skype.com/invite/aYIR3ucVyOBS"><img src="../assets/icons/skype.png" alt="skype"></a>
+                     </div>
+                       
+                </div>
+                <div class="footer-inner-wrapper contact-footer">
+                    <h5>Contact</h5>
+                    <p title="E-mail"><img src="../assets/icons/email.png" alt="E-mail" />
+                        cniyindagiriye@gmail.com</p>
+                    <p title="Phone Number"><img class="iconify" src="../assets/icons/phone-call.png" alt="Call us" />
+                        +250 780 728 136</p>
+                    <p title="Address"><img src="../assets/icons/location-pin.png" alt="Location" />
+                        Gasaka, Nyamagabe, Rwanda</p>
+                </div>
+            </div>
+        </footer>
+    
+    </div>
+
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <span id="success-close" class="close">&times;</span>
+            <p>Your message has been successful delivered</p>
+        </div>
+    </div>
+
+    <div id="wait-modal" class="modal">
+        <div class="modal-content">
+            <p><canvas id="canvas1" width="100" height="40"></canvas> <span>&SmallCircle;</span><span>&SmallCircle;</span><span>&SmallCircle;</span></p>
+        </div>
+    </div>   
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
+
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyD7aI7-uXgoowFlxQpd_CS9ot15G6KTWW8",
+            authDomain: "my-brand-80e31.firebaseapp.com",
+            databaseURL: "https://my-brand-80e31.firebaseio.com",
+            projectId: "my-brand-80e31",
+            storageBucket: "my-brand-80e31.appspot.com",
+            messagingSenderId: "547630104753",
+            appId: "1:547630104753:web:ede2feea279c0b667da290",
+            measurementId: "G-YKSLB2TKLT"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        db.settings({timestampsInSnapshots: true});
+    </script>
+
+    <script type="module" src="../js/contact.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

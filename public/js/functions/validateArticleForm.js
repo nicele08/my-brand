@@ -54,10 +54,8 @@ export function validateArticleImage(articleImage, err){
 
 export function validateArticleContent(articleContent, err){
     let isValid = false;
-
     if(articleContent.value == null || articleContent.value.length < 1){
         err[4].textContent = "*Article content can't be empty.";
-
         err[4].style.display = "block";
         addShadow(articleContent, "2px 2px 2px red");
     }else{
