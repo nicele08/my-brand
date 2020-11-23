@@ -55,12 +55,17 @@ export function validateArticleImage(articleImage, err){
 export function validateArticleContent(articleContent, err){
     let isValid = false;
 <<<<<<< HEAD
+<<<<<<< HEAD
     if(articleContent.value == null || articleContent.value.length < 1){
         err[4].textContent = "*Article content can't be empty.";
 =======
     if(articleContent.value == null || articleContent.value.length < 200){
         err[4].textContent = "*Article should have at least 50 words.";
 >>>>>>> ft-login-firebase
+=======
+    if(articleContent.value == null || articleContent.value.length < 1){
+        err[4].textContent = "*Article content can't be empty.";
+>>>>>>> ft-articles-firebase
         err[4].style.display = "block";
         addShadow(articleContent, "2px 2px 2px red");
     }else{
@@ -83,4 +88,21 @@ export function validateArticleAuthor(articleAuthor, err){
         isValid = true;
     }
     return isValid;
+<<<<<<< HEAD
+=======
+}
+
+export function validateArticleTopic(articleTopic, err){
+    let isValid = false;
+    if(articleTopic.value === ""){
+        err.textContent = "*Topic should be selected.";
+        err.style.display = "block";
+        addShadow(articleTopic, "2px 2px 2px red");
+    }else{
+        err.style.display = "none";
+        removeShadow(articleTopic);
+        isValid = true;
+    }
+    return isValid;
+>>>>>>> ft-articles-firebase
 }
