@@ -26,7 +26,7 @@ auth.onAuthStateChanged(user => {
         displayAuthors(snapshot.docs, articleAuthor);
        }).then(() => wait.style.display = "none");
     }else{
-        window.location.href = "../pages/login.html";
+        window.location.href = "../pages/blog.html";
     }
 });
 
