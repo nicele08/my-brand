@@ -37,18 +37,25 @@ signupForm.addEventListener('submit', e => {
         const userPassword = signupForm['signup-password'].value;
 
         wait.style.display = "block";
-        auth.createUserWithEmailAndPassword(userEmail, userPassword).then(()=>{
+        auth.createUserWithEmailAndPassword(userEmail, userPassword).then((cred)=>{
+            return db.collection('users').doc(cred.user.uid).set({
+                userType: 'client',
+                date: new Date().toDateString(),
+            });
+            
+        }).then(()=>{
             wait.style.display = "none";
             const modal = document.querySelector("#pop-modal");
             modal.style.display = "block";
 
             const succesClose = document.querySelector("#success-close");
             succesClose.addEventListener('click', e=>{modal.style.display = "none";});
-        }).then(()=>{
+
             email.value = '';
             password[0].value = '';
             password[1].value = '';
         }).catch(e=>{
+            console.log(e.message)
             wait.style.display = "none";
             const errModal = document.querySelector("#err-modal");
             errModal.style.display = "block";
