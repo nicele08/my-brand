@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-
-import addToolbar from "./functions/addToolbar.js";
-import {validateArticleAuthor, validateArticleContent, validateArticleImage, validateArticleName, validateArticleVisible } from "./functions/validateArticleForm.js";
-const saveBtn = document.getElementById("save-button");
-const deleteBtn = document.getElementById("delete-button");
-const err = document.getElementsByClassName("error");
-=======
 import canvas1 from "./functions/canvas.js";
 import displayAuthors from "./functions/displayAuthors.js";
 import displayTopics from "./functions/displayTopics.js";
@@ -14,27 +6,17 @@ const saveBtn = document.getElementById("save-button");
 const deleteBtn = document.getElementById("delete-button");
 const err = document.getElementsByClassName("error");
 const errorTopic = document.querySelector("#error-topic");
->>>>>>> ft-articles-firebase
 const articleTitle = document.getElementById("article-title");
 const articleVisible = document.getElementById("visible");
 const articleImage = document.getElementById("image");
 const articleContent = document.getElementById("content");
 const articleAuthor = document.getElementById("author");
-<<<<<<< HEAD
-=======
 const articleTopic = document.querySelector("#topic");
->>>>>>> ft-articles-firebase
 const modal = document.getElementById("pop-modal");
 const title = document.getElementById("title");
 const firstMessage = document.getElementById("modal-message");
 const secondMessage = document.getElementById("modal-message-two");
 const closeModal = document.getElementById("modal-cancel");
-<<<<<<< HEAD
-const continueModal = document.getElementById("modal-continue");
-
-title.textContent = articleTitle.value;
-
-=======
 const wait = document.querySelector("#wait-modal");
 const continueModal = document.getElementById("modal-continue");
 const formArticle = document.querySelector("#form-article-edit");
@@ -60,36 +42,24 @@ auth.onAuthStateChanged(user => {
             articleTopic.value = article.topic;
         }).then(()=>wait.style.display="none")
     }else{
-        window.location.href = "../pages/login.html";
+        window.location.href = "../pages/blog.html";
     }
 });
 
 
 
->>>>>>> ft-articles-firebase
 saveBtn.onclick = function(){
     const nameValid = validateArticleName(articleTitle, err);
     validateArticleVisible(articleVisible, err);
     const imageValid = validateArticleImage(articleImage, err);
     const contentValid = validateArticleContent(articleContent, err);
     const authorValid = validateArticleAuthor(articleAuthor, err);
-<<<<<<< HEAD
-=======
     const topicValid = validateArticleTopic(articleTopic, errorTopic);
->>>>>>> ft-articles-firebase
     
     
     if(nameValid == true &&
          imageValid == true &&
          contentValid == true &&
-<<<<<<< HEAD
-         authorValid == true){
-             firstMessage.style.display = "none";
-             continueModal.style.display = "none";
-             secondMessage.textContent = "Article has been successful updated";
-             closeModal.textContent = "Close";
-             modal.style.display = "block";
-=======
          authorValid == true &&
          topicValid == true){
              wait.style.display = "block";
@@ -137,7 +107,6 @@ saveBtn.onclick = function(){
                 errMessage.style.display = "block";
                 errClose.addEventListener("click", e=>{errMessage.style.display = "none"});
             })
->>>>>>> ft-articles-firebase
     }
 
 
@@ -150,12 +119,6 @@ deleteBtn.onclick = function(){
     firstMessage.style.display = "block";
     continueModal.style.display = "block";
     modal.style.display = "block";
-<<<<<<< HEAD
-    return false;
-}
-
-addToolbar(articleContent);
-=======
 
     const modalContinue = document.querySelector("#modal-continue");
     modalContinue.addEventListener('click', e => {
@@ -172,4 +135,3 @@ addToolbar(articleContent);
     })
     return false;
 }
->>>>>>> ft-articles-firebase

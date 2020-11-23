@@ -1,8 +1,8 @@
 import canvas1 from "./functions/canvas.js";
 import tickAllCheckboxes from "./functions/check-boxes.js";
 import checkedBoxes from "./functions/checkedBoxes.js";
-import displayArticles from "./functions/displayArticles.js";
 import updateCount from "./functions/updateCount.js";
+import displayQueries from "./functions/displayQueries.js";
 
 canvas1
 
@@ -25,8 +25,8 @@ countElement.textContent = updateCount(checkboxes);
 wait.style.display = "block";
 auth.onAuthStateChanged(user => {  
     if(user){        
-        db.collection('articles').get().then(snapshot => {        
-        displayArticles(snapshot.docs);
+        db.collection('queries').get().then(snapshot => {        
+        displayQueries(snapshot.docs);
        }).then(() => {
            wait.style.display = "none"
            const articleLinks = document.querySelectorAll(".article-link");
@@ -36,7 +36,7 @@ auth.onAuthStateChanged(user => {
                const td = articleLink.parentNode;
                const tr = td.parentNode;
                localStorage.setItem("articleId", tr.getAttribute('article-id'));
-               window.location.href = "./edit-article.html";
+               window.location.href = "./edit-query.html";
            }))
         })
     }else{
@@ -49,14 +49,14 @@ searchForm.addEventListener('submit', e=>{
     const query = searchForm['query'].value;
     const qLowerCase = query.toLowerCase();
     if(qLowerCase.length < 1){
-        db.collection('articles').onSnapshot(snapshot => {        
-            displayArticles(snapshot.docs);
+        db.collection('queries').onSnapshot(snapshot => {        
+            displayQueries(snapshot.docs);
         })
         return false;
     }
     wait.style.display = "block";
-    db.collection("articles").where('searchKey', 'array-contains-any', qLowerCase.split(" ")).get().then(snapshot => {
-        displayArticles(snapshot.docs);
+    db.collection("queries").where('searchKey', 'array-contains-any', qLowerCase.split(" ")).get().then(snapshot => {
+        displayQueries(snapshot.docs);
     }).then(() => {
         wait.style.display = "none";
         const articleLinks = document.querySelectorAll(".article-link");
@@ -66,7 +66,7 @@ searchForm.addEventListener('submit', e=>{
             const td = articleLink.parentNode;
             const tr = td.parentNode;
             localStorage.setItem("articleId", tr.getAttribute('article-id'));
-            window.location.href = "./edit-article.html";
+            window.location.href = "./edit-query.html";
         }))
     }) 
 })
@@ -107,11 +107,11 @@ formDelete.addEventListener('submit', e=>{
                 const docId = tr.getAttribute("article-id");
                 modal.style.display = 'none';
                 wait.style.display = "block";
-                db.collection("articles").doc(docId)
+                db.collection("queries").doc(docId)
                 .delete()
                 .then(() => {
                     wait.style.display = "none";
-                    window.location.replace("./articles.html");
+                    window.location.replace("./queries.html");
                 });
             })
         })
@@ -124,3 +124,6 @@ const articleLinks = document.querySelectorAll(".article-link");
 articleLinks.forEach(element => {
     alert(element.textContent)
 });
+
+
+
