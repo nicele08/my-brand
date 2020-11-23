@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="shortcut icon" href="../assets/icon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet" href="../css/main.css">
+    <link type="text/css" rel="stylesheet" href="../css/blog.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav id="navigation">
+                <a id="banner" href="./blog.html"><canvas id="logo-blog" width="100" height="40" style="border: 1px solid #5C4978;"></canvas></a>
+                    
+                <a id="home" href="./index.html">Home</a>
+                <a id="blog" class="current" href="./blog.html">Blog</a>
+                <a id="about" href="./about.html">About</a>
+                <a id="contact" href="./contact.html">Contact</a>
+                <a id="login" href="./login.html" hidden>Login</a>
+                <div id="user-account">
+                    <a id="notifications" href="#">
+                        <img src="../assets/icons/notification (1).png" alt="">
+                        <span id="count-notification">2</span>
+                        <span id="notification-arrow" class="arrow">&#8595;</span>
+                    </a>
+                    <a class="user-profile" id="link-user" href="#">
+                        <img id="user-image" src="../assets/icons/user (1).png" alt="">
+                        <span id="profile-arrow" class="arrow">&#8595;</span>
+                    </a>                    
+                </div>
+                <div class="menu-icon" onclick="changeMenu(this)">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content">
+            <div class="search-wrapper">
+                <div class="search">
+                    <form action="" id="search-form" method="post">
+                        <input id="query" type="text" placeholder="Search">
+                        <button id="search-btn" type="submit"><img src="../assets/icons/loupe.png" alt=""></button>                        
+                    </form>                    
+                </div>
+            </div>
+            <div class="left-side">
+                <div class="blog-head">
+                    <div id="text">
+                        <h1>Read to win</h1>
+                        <p>Time flies but you are the pilot</p>
+                    </div>
+                    <div class="select-wrapper">
+                        <select class="select-article" name="year" id="year">
+                            <option value="">Year</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                            <option value="2017">2017</option>
+                            <option value="2016">2016</option>
+                        </select>
+                        <select class="select-article" name="month" id="month">
+                            <option value="">Month</option>
+                            <option value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                        </select>
+                        <select class="select-article" name="topic" id="topic">
+                        </select>
+                    </div>
+                    
+                    <button id="subscribe"><img src="../assets/icons/subscribe.png" alt=""> <span>Subscribe</span></button>
+                    
+                </div>
+                <div id="blog-article-container">                   
+                </div>
+                <button id="more-articles">See more articles</button>
+            </div>
+            <div class="right-side">
+                
+                <div id="new-articles" class="latest-article">
+                </div>
+                <div id="popular-articles" class="latest-article">
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-wrapper">
+                <div class="footer-inner-wrapper about-footer">
+                    <h5>About</h5>
+                    <p>Web developer</p>
+                    <p>&copy; 2020 by Celestin Niyindagiriye</p>
+                </div>
+                <div class="footer-inner-wrapper blog-footer">
+                    <h5>Blog</h5>
+                    <p>Stay updated with our latest bolg posts</p>
+                    <form action="" id="form-subscribe">
+                        <input id="form-email" type="email" required>
+                        <input id="subscribe-btn" type="submit" value="Updates">
+                    </form>
+                </div>
+                <div class="footer-inner-wrapper social-media">
+                    <h6>Get in touch</h6> 
+                    <div class="get-in-touch">
+                        <a title="LinkeIn" href="https://www.linkedin.com/in/celestin-niyindagiriye-1380b1175/"><img src="../assets/icons/linkedin.png" alt="linkedin"></a>
+                        <a title="GitHub" href="https://github.com/cniyindagiriye/"><img src="../assets/icons/github-big-logo.png" alt="github"></a>
+                        <a title="Facebook" href="https://web.facebook.com/celestin.niyindagiriye/"><img src="../assets/icons/facebook.png" alt="facebook"></a>
+                        <a title="YouTube" href="https://www.youtube.com/channel/UC5mgJF3JEwB_0sCK7eMKj_Q"><img src="../assets/icons/youtube.png" alt="youtube"></a>
+                        <a title="Skype" href="https://join.skype.com/invite/aYIR3ucVyOBS"><img src="../assets/icons/skype.png" alt="skype"></a>
+                     </div>
+                       
+                </div>
+                <div class="footer-inner-wrapper contact-footer">
+                    <h5>Contact</h5>
+                    <p title="E-mail"><img src="../assets/icons/email.png" alt="E-mail" />
+                        cniyindagiriye@gmail.com</p>
+                    <p title="Phone Number"><img class="iconify" src="../assets/icons/phone-call.png" alt="Call us" />
+                        +250 780 728 136</p>
+                    <p title="Address"><img src="../assets/icons/location-pin.png" alt="Location" />
+                        Gasaka, Nyamagabe, Rwanda</p>
+                </div>
+            </div>
+        </footer>
+    
+    </div>
+    <div id="user-account-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-profile">
+                <div class="user-profile">
+                    <img src="../assets/icons/user.png" alt="">
+                </div>
+                <div class="user-info">
+                    <h3>Celestin Niyindagiriye</h3>
+                    <p>Kigali, Rwanda</p>
+                </div>
+            </div>
+            <nav>
+                <a id="profile-link" href="./profile.html">View Profile</a>
+                <a href="./logout.html">Logout</a>
+            </nav>
+        </div>
+    </div>
+    <div id="notification-modal" class="modal">        
+        <div class="modal-content">
+            <h2>Notifications</h2>
+            <div class="modal-profile">
+                <div class="article-image">
+                    <img src="../assets/icons/maths.png" alt="">
+                </div>
+                <div class="user-info">
+                    <h3>How to plot graphs</h3>
+                    <p>5 new comments</p>
+                </div>
+            </div>
+            <div class="modal-profile">
+                <div class="article-image">
+                    <img src="../assets/icons/maths.png" alt="">
+                </div>
+                <div class="user-info">
+                    <h3>How to plot graphs</h3>
+                    <p>2 new comments</p>
+                </div>
+            </div>
+        </div>
+    </div>
+     <div id="wait-modal" class="modal">
+        <div class="modal-content">
+            <p><canvas id="canvas1" width="100" height="40"></canvas> <span>&SmallCircle;</span><span>&SmallCircle;</span><span>&SmallCircle;</span></p>
+        </div>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
+
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyD7aI7-uXgoowFlxQpd_CS9ot15G6KTWW8",
+            authDomain: "my-brand-80e31.firebaseapp.com",
+            databaseURL: "https://my-brand-80e31.firebaseio.com",
+            projectId: "my-brand-80e31",
+            storageBucket: "my-brand-80e31.appspot.com",
+            messagingSenderId: "547630104753",
+            appId: "1:547630104753:web:ede2feea279c0b667da290",
+            measurementId: "G-YKSLB2TKLT"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        db.settings({timestampsInSnapshots: true});
+    </script>
+
+    <script type="module" src="../js/blog.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/logo.js"></script>
+</body>
+</html>
