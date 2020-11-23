@@ -124,3 +124,6 @@ const articleLinks = document.querySelectorAll(".article-link");
 articleLinks.forEach(element => {
     alert(element.textContent)
 });
+
+
+

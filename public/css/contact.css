@@ -67,7 +67,11 @@
     padding: 6px;
 }
 
+<<<<<<< HEAD
 .input-field:focus{
+=======
+.input-field:focus, textarea:focus{
+>>>>>>> ft-contact-firebase
     border-color: rgba(99, 3, 54, 0.295);
 }
 
@@ -87,6 +91,10 @@ textarea{
     border: 2px solid #2D9CDB;
     resize: vertical;
     width: 100%;
+<<<<<<< HEAD
+=======
+    padding: 6px;
+>>>>>>> ft-contact-firebase
 }
 
 #send-button, #login-button{
