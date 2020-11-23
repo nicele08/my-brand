@@ -353,7 +353,7 @@ img.profile{
     background-color: #CEFBFE; 
     color: #030230;
 }
-.error{
+.error, #error-topic{
     color: rgb(97, 15, 15);
     font-weight: bold;
 }
@@ -417,6 +417,28 @@ img.profile{
 }
 .modal-content p:nth-child(3){
     color: rgb(13, 77, 57);
+}
+@keyframes example {
+    from {color: red;}
+    to {color: yellow;}
+}
+#wait-modal div{
+    border-radius: 20px/50px;
+}
+#wait-modal p{
+    display: flex;
+    justify-content: space-between;
+    font-size: xx-large;
+    letter-spacing: .2em;
+    width: max-content;
+    margin: auto;
+}
+#wait-modal p span{
+    font-size: xx-large;
+    font-weight: bold;            
+    animation-name: example;
+    animation-duration: 1s; 
+    animation-iteration-count: infinite;
 }
 #message-number{
     color: red;

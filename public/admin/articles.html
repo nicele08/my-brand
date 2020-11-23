@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles | Celestin's Blog</title>
+    <link rel="shortcut icon" href="../assets/icon.ico" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    
+    <link type="text/css" rel="stylesheet" href="../css/main.css">
+    <link type="text/css" rel="stylesheet" href="../css/blog.css">
+</head>
+<body>
+    <div class="container">
+        <header id="navbar">
+            <a href="./admin-blog.html"><canvas id="logo-blog" width="100" height="40" style="border: 1px solid #5C4978;"></canvas></a>
+            <nav id="inner-navbar">
+                <p>Welcome, <a href="../pages/profile.html">Celestin</a>.</p>
+                <a href="../pages/blog.html">View site</a>
+                <a href="../pages/change-password.html">Change password</a>
+                <a id="logout" href="../pages/logout.html">Logout</a>
+            </nav>
+        </header>
+
+        <div class="content container-blog-admin">
+            <div class="search-wrapper">
+                <div class="search">
+                    <form action="" id="form-article-search">
+                        <input id="query" type="text" placeholder="Search article...">
+                        <button id="search-btn" type="submit"><img src="../assets/icons/loupe.png" alt=""></button>                        
+                    </form>                    
+                </div>
+            </div>
+            <div class="left-side left-nav-admin">
+                <table class="nav-table">
+                    <thead>
+                        <tr>
+                            <th colspan="3">Authenticated users</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="./users.html">Users</a></td>
+                            <td class="td-value"><a href="./add-user.html"><img src="../assets/icons/add.png" alt="">&nbsp;Add</a></td>
+                            <td class="td-value"><a href="./edit-user.html"><img src="../assets/icons/pencil.png" alt="">&nbsp;Change</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="./profiles.html">Profiles</a></td>
+                            <td class="td-value"><a href="./add-profile.html"><img src="../assets/icons/add.png" alt="">&nbsp;Add</a></td>
+                            <td class="td-value"><a href="./edit-profile.html"><img src="../assets/icons/pencil.png" alt="">&nbsp;Change</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="nav-table">
+                    <thead>
+                        <tr>
+                            <th colspan="3">My blog</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="active-row">
+                            <td><a href="./articles.html">Articles</a></td>
+                            <td class="td-value"><a href="./add-article.html"><img src="../assets/icons/add.png" alt="">&nbsp;Add</a></td>
+                            <td class="td-value"><a href="./articles.html"><img src="../assets/icons/pencil.png" alt="">&nbsp;Change</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="./queries.html">Queries</a></td>
+                            <td class="td-value"><a href="./add-query.html"><img src="../assets/icons/add.png" alt="">&nbsp;Add</a></td>
+                            <td class="td-value"><a href="./edit-query.html"><img src="../assets/icons/pencil.png" alt="">&nbsp;Change</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="./comments.html">Comments</a></td>
+                            <td class="td-value"><a href="./add-comment.html"><img src="../assets/icons/add.png" alt="">&nbsp;Add</a></td>
+                            <td class="td-value"><a href="./edit-comment.html"><img src="../assets/icons/pencil.png" alt="">&nbsp;Change</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="./views.html">Views</a></td>
+                            <td class="td-value"><a href="./add-view.html"><img src="../assets/icons/add.png" alt="">&nbsp;Add</a></td>
+                            <td class="td-value"><a href="./edit-view.html"><img src="../assets/icons/pencil.png" alt="">&nbsp;Change</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="./views.html">Likes</a></td>
+                            <td class="td-value"><a href="./add-like.html"><img src="../assets/icons/add.png" alt="">&nbsp;Add</a></td>
+                            <td class="td-value"><a href="./edit-like.html"><img src="../assets/icons/pencil.png" alt="">&nbsp;Change</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="./authors.html">Authors</a></td>
+                            <td class="td-value"><a href="./add-author.html"><img src="../assets/icons/add.png" alt="">&nbsp;Add</a></td>
+                            <td class="td-value"><a href="./authors.html"><img src="../assets/icons/pencil.png" alt="">&nbsp;Change</a></td>
+
+                        </tr>
+                        <tr>
+                            <td><a href="./topics.html">Topics</a></td>
+                            <td class="td-value"><a href="./add-topic.html"><img src="../assets/icons/add.png" alt="">&nbsp;Add</a></td>
+                            <td class="td-value"><a href="./topics.html"><img src="../assets/icons/pencil.png" alt="">&nbsp;Change</a></td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="middle-side">
+
+                <h2>Select article to change</h2>
+                <div id="action">
+                    <form id="form-delete">
+                        <label for="action">Action:</label>
+                        <select name="action" id="select-action">
+                            <option disabled selected value>--------select an option--------</option>
+                            <option id="delete" value="delete">Delete selected articles</option>
+                        </select>
+                        <input type="submit" value="Go" id="go" />
+                    </form>
+                    <p><span id="count">0</span> of <span id="total">0</span> selected</p>
+                </div>
+
+                <div class="table-view">
+                    <table class="article-table">
+                    <thead>
+                            <tr>
+                                <th><input id="check-all" type="checkbox"></th>
+                                <th>Title</th>
+                                <th>Likes</th>
+                                <th>Views</th>
+                                <th>Posted by</th>
+                                <th>Visible</th>
+                                <th>Date posted</th>
+                            </tr>
+                        </thead> 
+                        <tbody id="table-articles">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pages">
+                    <button id="current" disabled>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <p>80 Articles</p>
+                </div>
+
+            </div>
+                
+            <div class="right-side right-admin">
+                <div class="recent-actions">
+                    <h3>Filter</h3>
+                    <hr/>
+                    <div class="actions">
+                        <h4>Filter by active</h4>
+                        <p><a href="#">All</a></p>
+                        <p><a href="#">Yes</a></p>
+                        <p><a href="#">No</a></p>
+                    </div>
+                    <div class="actions">
+                        <h4>Filter by date posted</h4>
+                        <p><a href="#">Any date</a></p>
+                        <p><a href="#">Today</a></p>
+                        <p><a href="#">Past 7 days</a></p>
+                        <p><a href="#">This month</a></p>
+                        <p><a href="#">This year</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+       </div>
+
+       <footer>
+        <div class="footer-wrapper">
+            <div class="footer-inner-wrapper about-footer">
+                <h5>About</h5>
+                <p>Web developer</p>
+                <p>&copy; 2020 by Celestin Niyindagiriye</p>
+            </div>
+            <div class="footer-inner-wrapper blog-footer">
+                <h5>Blog</h5>
+                <p>Stay updated with our latest bolg posts</p>
+                <form action="">
+                    <input type="email">
+                    <input type="submit" value="Updates">
+                </form>
+            </div>
+            <div class="footer-inner-wrapper social-media">
+                <h6>Get in touch</h6> 
+                <div class="get-in-touch">
+                    <a title="LinkeIn" href="https://www.linkedin.com/in/celestin-niyindagiriye-1380b1175/"><img src="../assets/icons/linkedin.png" alt="linkedin"></a>
+                    <a title="GitHub" href="https://github.com/cniyindagiriye/"><img src="../assets/icons/github-big-logo.png" alt="github"></a>
+                    <a title="Facebook" href="https://web.facebook.com/celestin.niyindagiriye/"><img src="../assets/icons/facebook.png" alt="facebook"></a>
+                    <a title="YouTube" href="https://www.youtube.com/channel/UC5mgJF3JEwB_0sCK7eMKj_Q"><img src="../assets/icons/youtube.png" alt="youtube"></a>
+                    <a title="Skype" href="https://join.skype.com/invite/aYIR3ucVyOBS"><img src="../assets/icons/skype.png" alt="skype"></a>
+                 </div>
+                   
+            </div>
+            <div class="footer-inner-wrapper contact-footer">
+                <h5>Contact</h5>
+                <p title="E-mail"><img src="../assets/icons/email.png" alt="E-mail" />
+                    cniyindagiriye@gmail.com</p>
+                <p title="Phone Number"><img class="iconify" src="../assets/icons/phone-call.png" alt="Call us" />
+                    +250 780 728 136</p>
+                <p title="Address"><img src="../assets/icons/location-pin.png" alt="Location" />
+                    Gasaka, Nyamagabe, Rwanda</p>
+            </div>
+        </div>
+    </footer>
+    </div>
+
+    <div id="pop-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modal-message">You are going to delete <span id="message-number">5</span> articles. These changes can't be reversed!</p>
+            <p>Are you sure to delete?</p>
+        
+            <div class="modal-action">
+                <button id="modal-cancel">Cancel</button>
+                <button id="modal-continue">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="wait-modal" class="modal">
+        <div class="modal-content">
+            <p><canvas id="canvas1" width="100" height="40"></canvas> <span>&SmallCircle;</span><span>&SmallCircle;</span><span>&SmallCircle;</span></p>
+        </div>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
+
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyD7aI7-uXgoowFlxQpd_CS9ot15G6KTWW8",
+            authDomain: "my-brand-80e31.firebaseapp.com",
+            databaseURL: "https://my-brand-80e31.firebaseio.com",
+            projectId: "my-brand-80e31",
+            storageBucket: "my-brand-80e31.appspot.com",
+            messagingSenderId: "547630104753",
+            appId: "1:547630104753:web:ede2feea279c0b667da290",
+            measurementId: "G-YKSLB2TKLT"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        db.settings({timestampsInSnapshots: true});
+    </script>
+
+    <script src="../js/main.js"></script>
+    <script type="module" src="../js/admin.js"></script>
+    <script src="../js/logo.js"></script>
+</body>
+</html>

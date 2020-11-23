@@ -17,7 +17,7 @@
     font-size: large;
 }
 
-#author, #image{
+#author, #topic, #image{
     border: 2px solid #2D9CDB;
     padding: 6px;
     width: 100%;
