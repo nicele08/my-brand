@@ -11,8 +11,18 @@ const formLogin = document.querySelector("#form-login");
 
 auth.onAuthStateChanged(user => {
     if(user){        
-        // window.location.replace("./blog.html");
-    }else{      
+        localStorage.setItem('user', JSON.stringify(user));
+
+        db.collection("users").doc(user.uid).get().then(doc => {
+          const userType = doc.data().userType;
+          if(userType === 'admin'){
+            window.location.replace('../admin/index.html');
+          }else{
+            window.location.replace('./blog.html');
+          }
+        })
+    }else{  
+      location.setItem('user', null);    
     }
 });
 
@@ -35,7 +45,6 @@ formLogin.addEventListener('submit', e => {
     wait.style.display = "block";
     auth.signInWithEmailAndPassword(email.value, password.value).then(cred=>{
       wait.style.display = "none";
-      window.location.replace("./blog.html");
     }).catch(e=>{
       console.log(e.message);
       err[0].textContent = "Invalid login, please try again";
