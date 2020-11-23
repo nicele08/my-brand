@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Celestin's Blog</title>
+    <title>Celestin Niyindaigiriye</title>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
 
     <link type="text/css" rel="stylesheet" href="../css/main.css">
-    <link type="text/css" rel="stylesheet" href="../css/contact.css">
+    <link type="text/css" rel="stylesheet" href="../css/about.css">
 </head>
 <body>
     <div class="container">
         <header>
             <nav id="navigation">
-                <a id="banner" href="./index.html"><img class="profile" src="../assets/profile.jpeg" alt="Profile"><span>Celestin</span></a>
+                <a id="banner" href="#"><img class="profile" src="../assets/profile.jpeg" alt="Profile"><span>Celestin</span></a>
                     
-                <a id="home" href="./index.html">Home</a>
+                <a id="home" href="../index.html">Home</a>
                 <a id="blog" href="./blog.html">Blog</a>
-                <a id="about" href="./about.html">About</a>
+                <a id="about" class="current" href="#">About</a>
                 <a id="contact" href="./contact.html">Contact</a>
-                <a id="login" class="current" href="./login.html">Login</a>
+                <a id="login" href="./login.html">Login</a>
                 <div class="menu-icon" onclick="changeMenu(this)">
                         <div></div>
                         <div></div>
@@ -27,35 +27,40 @@
                     </div>
             </nav>
         </header>
-
         <div class="content">
-            <div class="contact-wrapper">
-                <div id="motivation">
-                    <canvas id="logo-blog" width="100" height="40" style="border: 1px solid #6D627C;"></canvas>
-                    <h1>Read To Win</h1>
-                    <p>Time flies but you are the pilot</p>
+            <h1>Meet Me</h1>
+            <div class="about-wrapper">
+                <div class="about-inner-wrapper">
+                    <img id="my-image" src="../assets/profile.jpeg" alt="Image">
                 </div>
+                <div class="about-inner-wrapper">
 
-                <div class="login">
-                    <p id="chat"><img class="iconify" src="../assets/icons/enter.png" alt=""></p>
-                    <h3>First time? <a href="./signup.html">Sign Up</a></h3>
-                    <form action="" method="post">                        
-                        <p class="error"></p>
-                        <p>
-                            <label for="name">E-mail:</label><br>
-                            <input id="email" class="input-field" type="email" name="email">
-                        </p>
-                        <p>
-                            <label for="password">Password:</label><br>
-                            <input id="password" class="input-field" type="password" name="password">
-                        </p>
-                        
-                        <input id="login-button" type="submit" value="Login">
-                    </form>
+                    <p>Celestin Niyindagiriye Mathematician, Web developer & designer </p>
+                    <p>I help companies and businesses to reflect their brand in global market.  Help individuals to make personal career marketing through social networking whith other people with shared interests .</p>
+                    <p id="calender"><img src="../assets/icons/calendar.png" alt="Birth date" > &nbsp; 6<sup>th</sup> &nbsp; April 1998</p>
+                    <a id="skype" href="" style="text-decoration: none;"><img src="../assets/icons/skype1.png" alt="Skype" > &nbsp; Let's talk</a>
+
+                    <h2>Proficiency</h2>
+
+                    <p>JavaScript 90%</p>
+                    <div class="skills-container">
+                        <div class="skills-javascript"></div>
+                    </div>
+                    <p>Python 85%</p>
+                    <div class="skills-container">
+                        <div class="skills-python"></div>
+                    </div>
+                    <p>Java 80%</p>
+                    <div class="skills-container">
+                        <div class="skills-java"></div>
+                    </div>
+                    <p>Statistics 83%</p>
+                    <div class="skills-container">
+                        <div class="skills-statistics"></div>
+                    </div>
                 </div>
             </div>
         </div>
-
         <footer>
             <div class="footer-wrapper">
                 <div class="footer-inner-wrapper about-footer">
@@ -93,9 +98,9 @@
             </div>
         </footer>
     </div>
-    
-    <script type="module" src="../js/login.js"></script>
-    <script src="../js/main.js"></script>
-    <script src="../js/motivation-logo.js"></script>
+
+    <script src="../js/main.js">
+        
+    </script>
 </body>
 </html>
