@@ -4,6 +4,7 @@ import canvas1 from "./functions/canvas.js";
 
 const canvas = canvas1;
 
+
 const email = document.getElementsByName("email")[0];
 const submit = document.getElementById("send-button");
 const err = document.getElementsByClassName("error");

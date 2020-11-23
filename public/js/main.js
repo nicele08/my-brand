@@ -31,6 +31,22 @@ function changeMenu(id){
 
 
 
+let modal = document.getElementById("pop-modal");
+let spanClose = document.getElementsByClassName("close")[0];
+let cancelBtn = document.getElementById("modal-cancel");
+spanClose.onclick = function(){
+    modal.style.display = "none";
+}
+
+cancelBtn.onclick = function(){
+    modal.style.display = "none";
+}
+
+window.onclick = function(event){
+    if(event.target == modal){
+        modal.style.display = "none";
+    }
+}
 
 
 
