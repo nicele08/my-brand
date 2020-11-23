@@ -580,6 +580,20 @@ span.arrow{
     text-align: center;
     margin: auto;
 }
+#form-email{
+    padding: 6px;
+    font-size: 1.2em;
+    border-radius: 5px;
+}
+#form-email:focus{
+    border-color: rgba(114, 3, 3, 0.712);
+}
+#subscribe-btn{
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
 
 
 /* phone */

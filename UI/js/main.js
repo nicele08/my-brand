@@ -29,6 +29,21 @@ function changeMenu(id){
     menuIconOpen ? closeNav() : openNav();
 }
 
+const formSubscribe = document.querySelector("#form-subscribe");
+
+formSubscribe.addEventListener('submit', e => {
+    e.preventDefault();
+
+    db.collection('subscribers').add({
+        email: formSubscribe['form-email'].value,
+        date: new Date().toDateString()
+    }).then(() => {
+        alert("You are registered now.");
+    }).catch(e => {
+        console.log(e.message);
+    });
+    
+})
 
 
 
