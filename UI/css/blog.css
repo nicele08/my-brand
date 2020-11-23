@@ -68,7 +68,9 @@
 
 .blog-article{
     margin-bottom: 12px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 12px;
     align-items: center;
 }
 .blog-article h2 a{
@@ -79,14 +81,15 @@
 .blog-article a:hover{
     text-decoration: underline;
 }
-.blog-image{
+#blog-article-container .blog-image{
     padding: 6px;
-    margin-right: 12px;
     background-color: #C4C4C4;
+    width: 100%;
 
 }
 .blog-image img{
-    width: 200px;
+    display: block;
+    width: 100%;
 }
 #more-articles{
     display: block;
@@ -177,23 +180,25 @@
     background-color: rgb(255, 251, 245);
     text-decoration: none;
 }
-
+#btn-comment{
+    background-color: #000566;
+    border: 2px solid #cad8d1;
+    padding: 6px 8px;
+    color: rgb(233, 230, 230);
+    border-radius: 20px/50px;
+    font-size: 1.2em;
+}
 .input-field{
     border: 2px solid #2D9CDB;
     width: 100%;
     height: 32px;
 }
 
-textarea{
-    border: 2px solid #2D9CDB;
-    resize: none;
-    width: 100%;
-}
-
-.article-row form{
-    display: flex;
-    align-items: flex-end;
-
+#form-comment{
+    display: none;
+    flex-wrap: nowrap;
+    align-items: end;
+    
 }
 
 .article-row .comment{
@@ -202,20 +207,33 @@ textarea{
 
 .article-row h5{
     margin-top: 32px;
-    margin-bottom: -12px;
+    margin-bottom: 0px;
 }
-
-
-
+#form-comment #message{
+    border: 2px solid #2D9CDB;
+    resize: none;
+    width: 100%;
+    padding: 6px;
+    font-size: 1.3em;
+}
+#form-comment #message:focus{
+    border: 2px solid burlywood;
+}
+#form-comment #add-button{
+    font-size: 1.2em;
+    
+}
 form #add-button{
     background-color: #0007A6;
     color: #c5c5c5;
     border: none;
-    padding: 12px 32px;
+    padding: 6px 32px;
     border-radius: 5px;
     font-weight: bold;
     margin-left: 6px;
-    margin-bottom: 22px;
+    cursor: pointer;
+    margin-bottom: 0;
+    height: max-content;
 }
 
 .view-replies{
@@ -263,6 +281,15 @@ form #add-button{
 .article-text{
     line-height: 2em;
     letter-spacing: .1em;
+    font-family: sans-serif;
+}
+.user-recommended-articles{
+    grid-column: 1/4;
+}
+.recommended-articles-wrapper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10%;
 }
 
 /* Admin side */
@@ -449,6 +476,76 @@ button#current{
 
 /* end of admin side */
 
+/* style user profile */
+.user-data .user-profile{
+    display: flex;
+    align-items: flex-start;
+}
+.user-data .user-profile img{
+    width: 126px;
+    border-radius: 50%;
+    padding: 1px;
+    border: 1px solid rgb(128, 128, 128);
+    margin-right: 12px;
+}
+.user-profile > #change-photo, #contact-info{
+    display: block;  
+    border: 2px solid blue;
+    padding: 6px 8px;
+    border-radius: 20px;
+    color: rgb(22, 22, 22);
+    background-color: rgb(170, 170, 248);
+    width: max-content;
+}
+
+.user-data{
+    background-color: rgba(187, 183, 183, 0.26);
+    padding: 6px 12px;
+    border: 1px solid rgb(163, 163, 163);
+    border-radius: 5px;
+    position: relative;
+}
+.tooltiptext{
+    top: 5%;
+    right: 10%;
+    visibility: hidden;
+    width: fit-content;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 12px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+}
+.tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+.user-data:hover .tooltiptext {
+  visibility: visible;
+}
+.left-side .user-info{
+    display: flex;
+    align-items: flex-start;
+}
+.left-side .user-info p{
+    margin-left: 32px;
+    cursor: pointer;
+    color: #073f38;
+    background-color: rgb(170, 170, 248);
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: 2px solid blue;
+}
+
+
 @media screen and (max-width: 760px){
     .article-row .comment{
         width: 100%;
@@ -468,8 +565,9 @@ button#current{
     }
 
     .blog-article{
-        flex-wrap: wrap;
+        display: block;
         margin-bottom: 32px;
+        border-bottom: 1px solid rgb(155, 153, 153);
     }
     .blog-image{
         width: 100%;
@@ -513,6 +611,10 @@ button#current{
 
     .span-two-columns{
         grid-column: 1/4;
+    }
+    .recommended-articles-wrapper > div{
+        grid-column: 1/4;
+        width: 100%;
     }
 
 }
