@@ -37,6 +37,7 @@ formLogin.addEventListener('submit', e => {
       wait.style.display = "none";
       window.location.replace("./blog.html");
     }).catch(e=>{
+      console.log(e.message);
       err[0].textContent = "Invalid login, please try again";
       err[0].style.display = "block";
       password.value = '';
