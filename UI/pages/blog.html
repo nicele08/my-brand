@@ -20,7 +20,7 @@
                 <a id="blog" class="current" href="./blog.html">Blog</a>
                 <a id="about" href="./about.html">About</a>
                 <a id="contact" href="./contact.html">Contact</a>
-                <a id="login" href="./login.html" hidden>Login</a>
+                <a id="login" href="./login.html">Login</a>
                 <div id="user-account">
                     <a id="notifications" href="#">
                         <img src="../assets/icons/notification (1).png" alt="">
@@ -144,7 +144,7 @@
             </div>
             <nav>
                 <a id="profile-link" href="./profile.html">View Profile</a>
-                <a href="./logout.html">Logout</a>
+                <a id="logout" href="./logout.html">Logout</a>
             </nav>
         </div>
     </div>
@@ -182,10 +182,9 @@
     <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
 
-
     <script>
-        const firebaseConfig = {
-            apiKey: "AIzaSyD7aI7-uXgoowFlxQpd_CS9ot15G6KTWW8",
+            const firebaseConfig = {
+            apiKey: "AIzaSyDzYPnef5AmqpGSBpCqqJdPGFOF-jR60W8",
             authDomain: "my-brand-80e31.firebaseapp.com",
             databaseURL: "https://my-brand-80e31.firebaseio.com",
             projectId: "my-brand-80e31",
@@ -193,15 +192,16 @@
             messagingSenderId: "547630104753",
             appId: "1:547630104753:web:ede2feea279c0b667da290",
             measurementId: "G-YKSLB2TKLT"
-        };
+        };  
         firebase.initializeApp(firebaseConfig);
-        const auth = firebase.auth();
         const db = firebase.firestore();
-        db.settings({timestampsInSnapshots: true});
+        db.settings({timestampsInSnapshots: true});      
     </script>
 
+    <script type="module" src="../js/auth.js"></script>
     <script type="module" src="../js/blog.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/logo.js"></script>
+    
 </body>
 </html>

@@ -134,7 +134,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
 
     <script>
-        const firebaseConfig = {
+            const firebaseConfig = {
             apiKey: "AIzaSyDzYPnef5AmqpGSBpCqqJdPGFOF-jR60W8",
             authDomain: "my-brand-80e31.firebaseapp.com",
             databaseURL: "https://my-brand-80e31.firebaseio.com",
@@ -143,13 +143,13 @@
             messagingSenderId: "547630104753",
             appId: "1:547630104753:web:ede2feea279c0b667da290",
             measurementId: "G-YKSLB2TKLT"
-        };
+        };  
         firebase.initializeApp(firebaseConfig);
-        const auth = firebase.auth();
         const db = firebase.firestore();
-        db.settings({timestampsInSnapshots: true});
+        db.settings({timestampsInSnapshots: true});      
     </script>
     
+    <script type="module" src="../js/auth.js"></script>
     <script type="module" src="../js/login.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/motivation-logo.js"></script>

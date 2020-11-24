@@ -9,24 +9,8 @@
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
-
-    <script>
-        const firebaseConfig = {
-            apiKey: "AIzaSyD7aI7-uXgoowFlxQpd_CS9ot15G6KTWW8",
-            authDomain: "my-brand-80e31.firebaseapp.com",
-            databaseURL: "https://my-brand-80e31.firebaseio.com",
-            projectId: "my-brand-80e31",
-            storageBucket: "my-brand-80e31.appspot.com",
-            messagingSenderId: "547630104753",
-            appId: "1:547630104753:web:ede2feea279c0b667da290",
-            measurementId: "G-YKSLB2TKLT"
-        };
-        firebase.initializeApp(firebaseConfig);
-        const auth = firebase.auth();
-        auth.signOut().then(()=>{
-            console
-            window.location.replace("./login.html");
-        });
-    </script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
+    
+    <script src="../js/auth.js"></script>
 </body>
 </html>
