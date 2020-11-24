@@ -9,61 +9,10 @@ const searchForm = document.querySelector("#search-form");
 const wait = document.querySelector("#wait-modal");
 let articleContainer = document.querySelector("#blog-article-container");
 
+db.collection('articles').orderBy('title').onSnapshot(snapshot => {
+    getArticles(snapshot.docs);
+})
 
-    db.collection('articles').orderBy('title').onSnapshot(snapshot => {
-        getArticles(snapshot.docs);
-    })
-const userData = localStorage.getItem('user');
-const user = JSON.parse(userData);
-console.log(user)
-    const loginBtn= document.querySelector("#login");
-    if(user){
-        subscribeBtn.style.display = "none";
-        const userAccount = document.querySelector("#user-account");
-        userAccount.style.display = "flex"; 
-        loginBtn.addEventListener('click', e => {
-            e.stopPropagation();
-            e.preventDefault();
-            window.location.href = "./logout.html";
-        })
-
-        const userProfile = document.querySelector("#link-user");
-        const profileArrow = document.querySelector("#profile-arrow");
-        userProfile.addEventListener('click', e=> {
-            e.preventDefault();
-            const modal = document.querySelector("#user-account-modal");
-            modal.style.display = "block";
-            profileArrow.style.display = "block";
-
-
-
-
-            window.addEventListener('click', e => {
-                if(e.target == modal){
-                    modal.style.display = 'none';
-                    profileArrow.style.display = "none";
-                }
-            })
-        })
-
-        const userNotification = document.querySelector("#notifications");
-        const notificationArrow = document.querySelector("#notification-arrow");
-        userNotification.addEventListener("click", e => {
-            e.preventDefault();
-            const modal = document.querySelector("#notification-modal");
-            modal.style.display = "block";
-            notificationArrow.style.display = "block";
-
-            window.addEventListener('click', e => {
-                if(e.target == modal){
-                    modal.style.display = "none";
-                    notificationArrow.style.display = "none";
-                }
-            })
-        })
-    }else{
-        loginBtn.style.display = "block";
-    }
 
 searchForm.addEventListener('submit', e=>{
     e.preventDefault(); 
