@@ -5,9 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
        
     auth.onAuthStateChanged(user => {
         if(user){
-            setupUI();
             console.log(user.email)
-
+            setupUI();
             const logout = document.querySelector("#logout");
             logout.addEventListener('click', e=> {
                 e.preventDefault();

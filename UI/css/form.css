@@ -5,6 +5,7 @@
     padding: 6px;
     font-size: large;
     letter-spacing: 0.1em;
+    width: 100%;
 }
 
 #save-button, #delete-button{
@@ -36,7 +37,7 @@ label{
 #btn-action > #delete-button{
     background-color: rgb(116, 34, 34);
 }
-input:focus, #image:focus, #author:focus, #content:focus{
+input:focus, #image:focus, #topic:focus, #author:focus, #content:focus{
     border-color: rgba(99, 3, 54, 0.295);
 }
 p{
