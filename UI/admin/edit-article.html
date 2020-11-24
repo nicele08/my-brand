@@ -90,7 +90,7 @@
                     <form action="" method="POST" enctype="multipart/form-data" id="form-article-edit">
                             <p>
                                 <label for="name">Article title:</label><br>
-                                <input id="article-title" class="input-field" type="text" name="title" value="How to use numpy library">
+                                <input id="article-title" class="input-field" type="text" name="title" value="">
                             </p>
                             <p class="error"></p>
                             <p><label for="visible">Article Visible:</label>&nbsp;
@@ -205,8 +205,8 @@
     <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-storage.js"></script>
 
     <script>
-        const firebaseConfig = {
-            apiKey: "AIzaSyD7aI7-uXgoowFlxQpd_CS9ot15G6KTWW8",
+            const firebaseConfig = {
+            apiKey: "AIzaSyDzYPnef5AmqpGSBpCqqJdPGFOF-jR60W8",
             authDomain: "my-brand-80e31.firebaseapp.com",
             databaseURL: "https://my-brand-80e31.firebaseio.com",
             projectId: "my-brand-80e31",
@@ -214,13 +214,14 @@
             messagingSenderId: "547630104753",
             appId: "1:547630104753:web:ede2feea279c0b667da290",
             measurementId: "G-YKSLB2TKLT"
-        };
+        };  
         firebase.initializeApp(firebaseConfig);
-        const auth = firebase.auth();
         const db = firebase.firestore();
-        const ref = firebase.storage().ref();
-        db.settings({timestampsInSnapshots: true});
+        const ref = firebase.storage().ref(); 
+        db.settings({timestampsInSnapshots: true});      
     </script>
+
+    <script type="module" src="../js/auth.js"></script>
 
     <script type="module" src="../js/edit-article.js"></script>
     <script src="../js/main.js"></script>

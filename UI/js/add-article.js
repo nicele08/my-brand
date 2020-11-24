@@ -1,3 +1,4 @@
+import auth from "./auth.js";
 import canvas1 from "./functions/canvas.js";
 import displayAuthors from "./functions/displayAuthors.js";
 import displayTopics from "./functions/displayTopics.js";

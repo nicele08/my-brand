@@ -1,3 +1,4 @@
+import auth from "./auth.js";
 import canvas1 from "./functions/canvas.js";
 import displayAuthors from "./functions/displayAuthors.js";
 import displayTopics from "./functions/displayTopics.js";
@@ -121,6 +122,9 @@ deleteBtn.onclick = function(){
     modal.style.display = "block";
 
     const modalContinue = document.querySelector("#modal-continue");
+    const cancelModal = document.querySelector("#modal-cancel");
+
+        cancelModal.addEventListener('click', () => modal.style.display = "none");
     modalContinue.addEventListener('click', e => {
         e.stopPropagation();
         e.preventDefault();

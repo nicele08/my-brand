@@ -1,3 +1,4 @@
+import auth from "./auth.js";
 import canvas1 from "./functions/canvas.js";
 import tickAllCheckboxes from "./functions/check-boxes.js";
 import checkedBoxes from "./functions/checkedBoxes.js";
@@ -23,7 +24,7 @@ let count = checkedBoxes(checkboxes);
 countElement.textContent = updateCount(checkboxes);
 
 wait.style.display = "block";
-auth.onAuthStateChanged(user => {  
+auth.onAuthStateChanged(user => {
     if(user){        
         db.collection('articles').get().then(snapshot => {        
         displayArticles(snapshot.docs);
@@ -96,7 +97,16 @@ formDelete.addEventListener('submit', e=>{
         number.textContent = `${count}`;
         modal.style.display = "block";
 
+        window.addEventListener('click', e=> {
+            if(e.target == modal){
+                modal.style.display = "none";
+            }
+        })
+
         const continueModal = document.querySelector("#modal-continue");
+        const cancelModal = document.querySelector("#modal-cancel");
+
+        cancelModal.addEventListener('click', () => modal.style.display = "none");
 
         continueModal.addEventListener('click', e => {
             e.preventDefault();
