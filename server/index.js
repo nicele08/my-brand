@@ -1,5 +1,8 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import morgan from 'morgan';
+import bodyParser from "body-parser";
+import userRoutes from "./routes/userRoute";
 
 mongoose.connect(
     "mongodb://127.0.0.1:27017/celestin-brand",
@@ -16,9 +19,11 @@ mongoose.Promise = global.Promise;
 
 const app = express();
 
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+app.use(morgan('dev'));
 
-
-
+app.use("/user", userRoutes);
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
