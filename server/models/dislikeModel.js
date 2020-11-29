@@ -9,6 +9,10 @@ const dislikeSchema = Schema({
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User'
+    },
+    date: {
+        type: Date,
+        default: Date.now
     }
 });
 

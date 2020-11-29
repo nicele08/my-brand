@@ -11,7 +11,11 @@ const profileSchema = Schema({
     lastName: {type: String},
     birthday: {type: String},
     phoneNumber: {type: String},
-    location: {type: String}
+    location: {type: String},
+    date: {
+        type: Date,
+        default: Date.now
+    }
 });
 
 export default model('Profile', profileSchema);

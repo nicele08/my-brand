@@ -10,7 +10,11 @@ const commentSchema = Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
-    body: {type: String, required: true}
+    body: {type: String, required: true},
+    date: {
+        type: Date,
+        default: Date.now
+    }
 });
 
 export default model('Comment', commentSchema);
