@@ -1,12 +1,13 @@
 import express from "express";
 import {addQuery, getQuery, getAllQueries, updateQuery, deleteQuery} from "../controllers/queryController";
+import checkAuth from "../middleware/check-auth";
 
 const queryRoutes = express.Router();
 
-queryRoutes.get("/", getAllQueries);
-queryRoutes.get("/:queryId", getQuery);
-queryRoutes.patch("/:queryId", updateQuery);
+queryRoutes.get("/", checkAuth, getAllQueries);
+queryRoutes.get("/:queryId", checkAuth, getQuery);
+queryRoutes.patch("/:queryId", checkAuth, updateQuery);
 queryRoutes.post("/", addQuery);
-queryRoutes.delete("/:queryId", deleteQuery);
+queryRoutes.delete("/:queryId", checkAuth, deleteQuery);
 
 export default queryRoutes;
