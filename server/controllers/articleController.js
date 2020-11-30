@@ -6,6 +6,7 @@ import removeArticleImage from "../functions/removeFile";
 
 export function addArticle(req, res, next){
     User.findById(req.body.userId)
+        .exec()
         .then(user => {
             if(user.userType != 'admin'){
                 return res.status(404).json({
