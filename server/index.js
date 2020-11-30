@@ -5,6 +5,7 @@ import bodyParser from "body-parser";
 import userRoutes from "./routes/userRoute";
 import categoryRoutes from "./routes/categoryRoute";
 import articleRoutes from './routes/articleRoute';
+import queryRoutes from './routes/queryRoute';
 
 mongoose.connect(
     "mongodb://127.0.0.1:27017/celestin-brand",
@@ -29,6 +30,7 @@ app.use(morgan('dev'));
 app.use("/user", userRoutes);
 app.use("/article-category", categoryRoutes);
 app.use("/article", articleRoutes);
+app.use("/query", queryRoutes)
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
