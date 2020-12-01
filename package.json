@@ -1,0 +1,27 @@
+{
+  "name": "my-brand",
+  "version": "1.0.0",
+  "description": "Personal website with blog(My-brand)",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "my-brand"
+  },
+  "author": "Celestin",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/node": "^7.12.6",
+    "@babel/preset-env": "^7.12.7"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.16"
+  }
+}
