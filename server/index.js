@@ -8,6 +8,7 @@ import articleRoutes from './routes/articleRoute';
 import queryRoutes from './routes/queryRoute';
 import profileRoutes from './routes/profileRoute';
 import viewRoutes from './routes/viewRoute';
+import commentRoutes from './routes/commentRoute';
 
 mongoose.connect(
     "mongodb://127.0.0.1:27017/celestin-brand",
@@ -32,9 +33,10 @@ app.use(morgan('dev'));
 app.use("/user", userRoutes);
 app.use("/article-category", categoryRoutes);
 app.use("/article", articleRoutes);
-app.use("/query", queryRoutes)
+app.use("/query", queryRoutes);
 app.use("/profile", profileRoutes);
 app.use("/view", viewRoutes);
+app.use("/comment", commentRoutes);
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
