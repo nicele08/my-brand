@@ -5,6 +5,6 @@ node_modules
 # ignore -lock.json
 package-lock.json
 # ignore eslintrc
-.eslintrc.js
+.eslintrc.json
 # ignore environment file
 .env
