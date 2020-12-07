@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import mongoose from 'mongoose';
 import chai from 'chai';
 import chaiHttp from 'chai-http';
