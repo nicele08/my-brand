@@ -7,6 +7,4 @@ package-lock.json
 # ignore eslintrc
 .eslintrc.js
 # ignore environment file
-.env 
-#ignore eslint
-.eslintrc.json
+.env
