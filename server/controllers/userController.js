@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
 import jsonwebtoken from 'jsonwebtoken';
@@ -28,6 +29,7 @@ export function userSignup(req, res) {
         newUser.save()
           .then((result) => {
             res.status(201).json({
+              id: result._id,
               message: 'User created',
               user: result,
             });

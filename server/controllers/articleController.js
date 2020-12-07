@@ -28,13 +28,14 @@ export function addArticle(req, res) {
             title: req.body.title,
             visible: req.body.visible,
             content: req.body.content,
-            articleImage: req.file.path,
+            articleImage: req.body.articleImage,
           });
           return article.save();
         })
         .then((result) => {
           res.status(201).json({
             message: 'Article created successfully',
+            id: result._id,
             createdArticle: {
               _id: result._id,
               author: result.user,
@@ -105,6 +106,7 @@ export function getArticle(req, res) {
     })
     .catch((err) => {
       res.status(500).json({
+        message: 'Invalid article',
         error: err,
       });
     });
@@ -129,7 +131,7 @@ export function updateArticle(req, res) {
             });
           }
 
-          Article.update(
+          Article.updateOne(
             {
               _id: id,
             },
@@ -140,16 +142,17 @@ export function updateArticle(req, res) {
                 title: req.body.title,
                 visible: req.body.visible,
                 content: req.body.content,
-                articleImage: req.file.path,
+                articleImage: req.body.articleImage,
               },
             },
           ).exec()
-            .then(() => {
+            .then((result) => {
               res.status(201).json({
+                nModified: result.nModified,
                 message: 'Article updated successfully',
                 request: {
                   type: 'GET',
-                  url: `http//localhost:3000/article/${id}`,
+                  url: `http//localhost:3000/articles/${id}`,
                 },
               });
             })
@@ -195,6 +198,7 @@ export function deleteArticle(req, res) {
     })
     .catch((err) => {
       res.status(500).json({
+        message: 'Invalid article',
         error: err,
       });
     });
