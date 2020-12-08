@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
 import jsonwebtoken from 'jsonwebtoken';
@@ -28,6 +29,7 @@ export function userSignup(req, res) {
         newUser.save()
           .then((result) => {
             res.status(201).json({
+              id: result._id,
               message: 'User created',
               user: result,
             });
@@ -66,6 +68,21 @@ export function getUser(req, res) {
       } else {
         res.status(404).json({ message: 'User not found' });
       }
+    })
+    .catch((err) => res.status(500).json({
+      message: 'Invalid request',
+      error: err,
+    }));
+}
+
+export function deleteUser(req, res) {
+  const id = req.body.userId;
+  User.deleteOne({ _id: id })
+    .exec()
+    .then(() => {
+      res.status(200).json({
+        message: 'User has been deleted',
+      });
     })
     .catch((err) => res.status(500).json({
       message: 'Invalid request',
