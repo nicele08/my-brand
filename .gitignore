@@ -1,4 +1,3 @@
-*.vscode
 #ignore .vscode
 .vscode
 # ignore node modules
