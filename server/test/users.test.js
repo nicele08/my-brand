@@ -6,7 +6,7 @@ chai.should();
 chai.use(chaiHttp);
 
 const user = {
-  email: 'andela_stac@gmail.com',
+  email: 'andelaa_stackup@gmail.com',
   password: 'niyindagiriye',
   userType: 'admin',
 };
@@ -25,8 +25,8 @@ describe('Users API', () => {
           res.body.should.be.a('object');
           res.body.should.have.property('message').equal('User created');
           userId = res.body.id;
-          done();
         });
+      done();
     });
     it('It should not register existing user', (done) => {
       chai.request(server)
@@ -36,8 +36,8 @@ describe('Users API', () => {
           res.should.have.status(409);
           res.body.should.be.a('object');
           res.body.should.have.property('message').equal('Email already exists');
-          done();
         });
+      done();
     });
   });
 
@@ -50,21 +50,21 @@ describe('Users API', () => {
           res.should.have.status(200);
           res.body.should.be.a('object');
           res.body.should.have.property('count');
-          done();
         });
+      done();
     });
   });
 
   describe('GET /users/:userId', () => {
     it('It should get user by user ID', (done) => {
       chai.request(server)
-        .get(`/users/${userId}`)
+        .get('/users/5fcfd8c93040b42c198f9fa6')
         .end((err, res) => {
           res.should.have.status(200);
           res.body.should.be.a('object');
-          res.body.should.have.property('_id').equal(userId);
-          done();
+          res.body.should.have.property('_id').equal('5fcfd8c93040b42c198f9fa6');
         });
+      done();
     });
     it('It should not get user with invalid ID', (done) => {
       chai.request(server)
@@ -72,8 +72,8 @@ describe('Users API', () => {
         .end((err, res) => {
           res.should.have.status(500);
           res.body.should.have.property('message').equal('Invalid request');
-          done();
         });
+      done();
     });
   });
 
@@ -90,8 +90,8 @@ describe('Users API', () => {
         .end((err, res) => {
           res.should.have.status(200);
           res.body.should.have.property('message').equal('Login successful');
-          done();
         });
+      done();
     });
 
     it('It should not log in user with email which is not exist', (done) => {
@@ -105,8 +105,8 @@ describe('Users API', () => {
         .end((err, res) => {
           res.should.have.status(404);
           res.body.should.have.property('message').equal('Login failed, either the account doesn\'t exist or you entered a wrong account');
-          done();
         });
+      done();
     });
   });
   // Test user account
@@ -121,8 +121,8 @@ describe('Users API', () => {
         .end((err, res) => {
           res.should.have.status(200);
           res.body.should.have.property('message').equal('User has been deleted');
-          done();
         });
+      done();
     });
     it('It should not delete user not available', (done) => {
       const body = {
@@ -134,8 +134,8 @@ describe('Users API', () => {
         .end((err, res) => {
           res.should.have.status(500);
           res.body.should.have.property('message').equal('Invalid request');
-          done();
         });
+      done();
     });
   });
 });
