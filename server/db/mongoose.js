@@ -1,12 +1,19 @@
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 
-mongoose.set();
+dotenv.config();
+
 mongoose.set('useUnifiedTopology', true);
 mongoose.set('useCreateIndex', true);
 mongoose.Promise = global.Promise;
 
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
-  .then(() => true)
-  .catch(() => false);
+try {
+  mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true },
+    // eslint-disable-next-line no-console
+    () => console.log('database connected'));
+} catch (err) {
+  // eslint-disable-next-line no-console
+  console.log('database not connected');
+}
 
 export default mongoose;
