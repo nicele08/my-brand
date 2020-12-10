@@ -1,16 +1,12 @@
 import express from 'express';
 import userRoutes from './routes/userRoute';
-import mongoose from './db/mongoose';
+import connect from './db/mongoose';
 
 const app = express();
 
-const db = mongoose;
-app.use('/database', (req, res) => {
-  res.status(500).json({
-    dbState: db.connection.readyState,
-  });
-});
+connect();
 
+app.use('/database', connect);
 app.use(express.json());
 
 app.use((req, res, next) => {

@@ -7,13 +7,17 @@ mongoose.set('useUnifiedTopology', true);
 mongoose.set('useCreateIndex', true);
 mongoose.Promise = global.Promise;
 
-try {
-  mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true },
-    // eslint-disable-next-line no-console
-    () => console.log('database connected'));
-} catch (err) {
-  // eslint-disable-next-line no-console
-  console.log('database not connected');
+function connect(req = null, res = null) {
+  try {
+    mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true },
+      () => {
+        if (req) {
+          res.status(200).json({ message: 'Database connected' });
+        }
+      });
+  } catch (err) {
+    res.status(500).json({ message: 'Database not connected' });
+  }
 }
 
-export default mongoose;
+export default connect;

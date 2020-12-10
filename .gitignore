@@ -4,3 +4,4 @@
 node_modules
 # ignore environment file
 .env 
+package-lock.json
