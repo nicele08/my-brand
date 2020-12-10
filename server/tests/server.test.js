@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import request from 'supertest';
 import expect from 'expect';
 import app from '../index';
@@ -19,12 +18,11 @@ describe('GET /', () => {
 
 describe('GET /database', () => {
   it('Should get status of the database: 1-connected', (done) => {
-    const state = 1;
-
     request(app)
       .get('/database')
       .expect((result) => {
-        expect(result.body.dbState).toBe(state);
+        expect(result.status).toBe(200);
+        expect(result.body.message).toBe('Database connected');
       })
       .end(done);
   });
