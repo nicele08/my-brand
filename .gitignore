@@ -2,5 +2,6 @@
 .vscode
 # ignore node modules
 node_modules
-
-.env
+# ignore environment file
+.env 
+package-lock.json

@@ -1,6 +1,13 @@
 import express from 'express';
+import userRoutes from './routes/userRoute';
+import connect from './db/mongoose';
 
 const app = express();
+
+connect();
+
+app.use('/database', connect);
+app.use(express.json());
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -15,12 +22,14 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/', (req, res) => {
+app.use('/home', (req, res) => {
   res.status(200)
     .json({
       status: 'Active',
     });
 });
+
+app.use('/users', userRoutes);
 
 app.listen(3000, () => {
   // eslint-disable-next-line no-console
