@@ -7,10 +7,22 @@ describe('GET /', () => {
     const status = 'Active';
 
     request(app)
-      .get('/')
+      .get('/home')
       .expect(200)
       .expect((result) => {
         expect(result.body.status).toBe(status);
+      })
+      .end(done);
+  });
+});
+
+describe('GET /database', () => {
+  it('Should get status of the database: 1-connected', (done) => {
+    request(app)
+      .get('/database')
+      .expect((result) => {
+        expect(result.status).toBe(200);
+        expect(result.body.message).toBe('Database connected');
       })
       .end(done);
   });
