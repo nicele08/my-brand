@@ -1,4 +1,6 @@
 import express from 'express';
+import swaggerUI from 'swagger-ui-express';
+import swaggerJSDoc from 'swagger-jsdoc';
 import userRoutes from './routes/userRoute';
 import mongoose from './db/mongoose';
 import articleRoutes from './routes/articleRoute';
@@ -8,10 +10,27 @@ const app = express();
 
 const db = mongoose;
 app.use('/database', (req, res) => {
-  res.status(500).json({
+  res.status(200).json({
     dbState: db.connection.readyState,
   });
 });
+
+const swaggerOptions = {
+  swaggerDefinition: {
+    info: {
+      title: 'My-brand API',
+      description: 'Personal website with blog',
+      contact: {
+        name: 'Celestin Niyindagiriye(Developer)',
+      },
+      servers: ['http://localhost:3000'],
+    },
+  },
+  apis: ['server/index.js'],
+};
+
+const swaggerDocs = swaggerJSDoc(swaggerOptions);
+app.use('/my-brand-api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 
 app.use(express.json());
 

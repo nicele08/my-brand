@@ -75,6 +75,21 @@ export function getUser(req, res) {
     }));
 }
 
+export function deleteUser(req, res) {
+  const id = req.body.userId;
+  User.deleteOne({ _id: id })
+    .exec()
+    .then(() => {
+      res.status(200).json({
+        message: 'User has been deleted',
+      });
+    })
+    .catch((err) => res.status(500).json({
+      message: 'Invalid request',
+      error: err,
+    }));
+}
+
 export function userLogin(req, res) {
   User.find({ email: req.body.email })
     .exec()

@@ -8,3 +8,4 @@ package-lock.json
 .eslintrc.js
 # ignore environment file
 .env
+.nyc_output

@@ -28,7 +28,7 @@ export function addArticle(req, res) {
             title: req.body.title,
             visible: req.body.visible,
             content: req.body.content,
-            articleImage: req.body.articleImage,
+            articleImage: req.file.path,
           });
           return article.save();
         })

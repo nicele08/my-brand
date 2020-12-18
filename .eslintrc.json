@@ -13,5 +13,6 @@
   },
   "ignorePatterns": "UI/",
   "rules": {
+    "linebreak-style": ["error", "windows"]
   }
 }

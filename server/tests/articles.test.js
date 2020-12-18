@@ -7,14 +7,13 @@ import server from '../index';
 chai.should();
 chai.use(chaiHttp);
 
-const userId = '5fcb3acfb9e9c029b9e8536a';
-const categoryId = '5fc33ba258e3af1819a744e7';
+const userId = '5fcfebd0ef12a03707453c87';
+const categoryId = '5fd08e949c99f321cee38ca3';
 
 const article = {
   title: 'How to program in Python language?',
   visible: true,
   content: 'Python is dynamic programming language used in artificial intelligence',
-  articleImage: 'python.png',
   categoryId,
   userId,
 };
@@ -27,7 +26,8 @@ describe('Articles API', () => {
     it('It should add new article', (done) => {
       chai.request(server)
         .post('/articles')
-        .send(article)
+        .field({ ...article })
+        .attach('articleImage', './server/tests/test-coverage.PNG')
         .end((err, res) => {
           res.should.have.status(201);
           res.body.should.have.property('message').equal('Article created successfully');
