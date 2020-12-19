@@ -19,6 +19,7 @@ const swaggerOptions = {
   swaggerDefinition: {
     info: {
       title: 'My-brand API',
+      version: '1.0.0',
       description: 'Personal website with blog',
       contact: {
         name: 'Celestin Niyindagiriye(Developer)',
@@ -26,7 +27,7 @@ const swaggerOptions = {
       servers: ['http://localhost:3000'],
     },
   },
-  apis: ['server/index.js'],
+  apis: ['server/index.js', 'server/routes/*.js'],
 };
 
 const swaggerDocs = swaggerJSDoc(swaggerOptions);
@@ -47,6 +48,16 @@ app.use((req, res, next) => {
   next();
 });
 
+/**
+ * @swagger
+ * /home:
+ *  get:
+ *    summary: Welcome to this site
+ *    description: <h1>Read to win. Time flies but you are the pilot</h1>
+ *    responses:
+ *      '200':
+ *        description: success
+ */
 app.use('/home', (req, res) => {
   res.status(200)
     .json({
