@@ -1,4 +1,4 @@
-import chai from 'chai';
+import chai, { assert } from 'chai';
 import chaiHttp from 'chai-http';
 import server from '../index';
 
@@ -6,7 +6,7 @@ chai.should();
 chai.use(chaiHttp);
 
 const user = {
-  email: 'andela_atlp_program2020@gmail.com',
+  email: 'andela_atlpprogram2020@gmail.com',
   password: 'niyindagiriye',
   userType: 'admin',
 };
@@ -33,7 +33,7 @@ describe('Users API', () => {
         .post('/users/signup')
         .send(user)
         .end((err, res) => {
-          res.should.have.status(409);
+          res.should.have.status(404);
           res.body.should.be.a('object');
           res.body.should.have.property('message').equal('Email already exists');
           done();
@@ -49,7 +49,8 @@ describe('Users API', () => {
         .end((err, res) => {
           res.should.have.status(200);
           res.body.should.be.a('object');
-          res.body.should.have.property('count');
+          res.body.should.have.property('countUsers');
+          assert.isAbove(res.body.countUsers, 0);
           done();
         });
     });
@@ -62,7 +63,7 @@ describe('Users API', () => {
         .end((err, res) => {
           res.should.have.status(200);
           res.body.should.be.a('object');
-          res.body.should.have.property('_id').equal(userId);
+          res.body.should.have.property('id').equal(userId);
           done();
         });
     });
@@ -70,8 +71,8 @@ describe('Users API', () => {
       chai.request(server)
         .get('/users/1')
         .end((err, res) => {
-          res.should.have.status(500);
-          res.body.should.have.property('message').equal('Invalid request');
+          res.should.have.status(404);
+          res.body.should.have.property('message').equal('User not found or something is wrong');
           done();
         });
     });
@@ -104,7 +105,7 @@ describe('Users API', () => {
         .send(credentials)
         .end((err, res) => {
           res.should.have.status(404);
-          res.body.should.have.property('message').equal('Login failed, either the account doesn\'t exist or you entered a wrong account');
+          res.body.should.have.property('message').equal('Login failed');
           done();
         });
     });
@@ -112,12 +113,9 @@ describe('Users API', () => {
   // Test user account
   describe('DELETE /users', () => {
     it('It should delete user with id', (done) => {
-      const body = {
-        userId,
-      };
       chai.request(server)
         .delete('/users')
-        .send(body)
+        .send({ userId })
         .end((err, res) => {
           res.should.have.status(200);
           res.body.should.have.property('message').equal('User has been deleted');
@@ -125,15 +123,12 @@ describe('Users API', () => {
         });
     });
     it('It should not delete user not available', (done) => {
-      const body = {
-        userId: 12,
-      };
       chai.request(server)
         .delete('/users')
-        .send(body)
+        .send({ userId: 12 })
         .end((err, res) => {
-          res.should.have.status(500);
-          res.body.should.have.property('message').equal('Invalid request');
+          res.should.have.status(404);
+          res.body.should.have.property('message').equal('Deletion failed');
           done();
         });
     });
