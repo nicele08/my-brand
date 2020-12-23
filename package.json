@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --require @babel/register server/index.js",
-    "test": "mocha --timeout 5000 --require @babel/register server/tests/**/*.test.js --exit",
+    "test": "mocha --timeout 15000 --require @babel/register server/tests/**/*.test.js --exit",
     "test:coverage": "nyc npm test --exit",
     "test-watch": "nodemon --exec \"npm test\"",
     "lint": "eslint server/",
