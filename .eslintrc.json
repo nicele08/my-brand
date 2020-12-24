@@ -12,6 +12,6 @@
         "sourceType": "module"
     },
     "ignorePatterns": "UI/",
-    "rules": {
+    "rules": {        
     }
 }

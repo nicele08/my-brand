@@ -7,17 +7,6 @@ mongoose.set('useUnifiedTopology', true);
 mongoose.set('useCreateIndex', true);
 mongoose.Promise = global.Promise;
 
-function connect(req = null, res = null) {
-  try {
-    mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true },
-      () => {
-        if (req) {
-          res.status(200).json({ message: 'Database connected' });
-        }
-      });
-  } catch (err) {
-    res.status(500).json({ message: 'Database not connected' });
-  }
+export default function dbConnect() {
+  mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useFindAndModify: false });
 }
-
-export default connect;
