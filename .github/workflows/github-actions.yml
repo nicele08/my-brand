@@ -12,10 +12,7 @@ jobs:
       - name: Install
         run: npm install
       - name: Lint
-        run: npm run lint
-
-      - name: Test
-        run: npm test
-      
+        run: npm run Lint
+        
       - name: Test Coverage
         run: npm run test:coverage
